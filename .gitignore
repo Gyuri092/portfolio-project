@@ -7,6 +7,8 @@
 /.pnp
 .pnp.js
 .yarn/install-state.gz
+yarn.lock
+package-lock.json
 
 # testing
 /coverage
@@ -23,10 +25,14 @@
 *.pem
 
 # debug
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+lerna-debug.log*
+.tmp/
 
 # local env files
 .env*.local
@@ -45,7 +51,6 @@ logs
 **/*.backup.*
 **/*.back.*
 
-node_modules
 bower_components
 
 *.sublime*
@@ -53,6 +58,21 @@ bower_components
 psd
 thumb
 sketch
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Build
+dist
+dist-ssr
+*.local
 
 ### Windows ###
 # Windows thumbnail cache files
