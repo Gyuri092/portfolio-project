@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
+/* eslint no-underscore-dangle: 0 */
+
 import path from 'path';
+
+const __dirname = path.resolve();
 
 const nextConfig = {
   sassOptions: {
