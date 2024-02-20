@@ -1,7 +1,10 @@
+@use 'fonts';
+
 /* box-sizing 규칙을 명시합니다. */
 *,
 *::before,
 *::after {
+  font-family: 'Poppins';
   box-sizing: border-box;
 }
 
