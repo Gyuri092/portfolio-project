@@ -1,6 +1,6 @@
-import '../../styles/header.scss';
-import DartModeIcon from '../../../public/icons/darkMode.svg';
-import FullScreenIcon from '../../../public/icons/fullScreen.svg';
+import '@/styles/header.scss';
+import DartModeIcon from '@/icons/darkMode.svg';
+import FullScreenIcon from '@/icons/fullScreen.svg';
 
 export const Header = () => {
   return (
