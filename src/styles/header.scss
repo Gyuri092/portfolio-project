@@ -1,0 +1,15 @@
+$deepNightBlue: #1d084b;
+
+.header-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  //   width: 386px;
+  //   height: 89px;
+  color: $deepNightBlue;
+  font-weight: 500;
+  font-size: 50px;
+}
