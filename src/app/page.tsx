@@ -1,4 +1,6 @@
-import { Header } from '@/components/Header/Header';
+'use client';
+
+import { Header } from '@/components/Header/Header.client';
 
 export default function Page() {
   return (
