@@ -1,12 +1,13 @@
-import '@/styles/header.scss';
-import LightModeIcon from '@/icons/lightMode.svg';
 import DarkModeIcon from '@/icons/darkMode.svg';
 import FullScreenIcon from '@/icons/fullScreen.svg';
 import FullScreenIconInDarkMode from '@/icons/fullScreenInDarkMode.svg';
-import { useState } from 'react';
+import LightModeIcon from '@/icons/lightMode.svg';
+import { darkModeState } from '@/recoil/atoms';
+import '@/styles/header.scss';
+import { useRecoilState } from 'recoil';
 
 export const Header = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useRecoilState(darkModeState);
   return (
     <div className="header-container">
       <div className="title">gyuri-portfolio</div>
@@ -14,12 +15,12 @@ export const Header = () => {
         <button
           type="button"
           className="icon"
-          onClick={() => setIsDarkMode((prev) => !prev)}
+          onClick={() => setDarkMode((prev) => !prev)}
         >
-          {isDarkMode ? <DarkModeIcon /> : <LightModeIcon />}
+          {darkMode ? <DarkModeIcon /> : <LightModeIcon />}
         </button>
         <button type="button" className="icon">
-          {isDarkMode ? <FullScreenIconInDarkMode /> : <FullScreenIcon />}
+          {darkMode ? <FullScreenIconInDarkMode /> : <FullScreenIcon />}
         </button>
       </div>
     </div>
