@@ -1,1 +1,10 @@
 @use 'reset';
+
+@use 'colors' as *;
+
+.darkmode {
+  background-color: $charcoalGray;
+}
+.lightmode {
+  background-color: $white;
+}
