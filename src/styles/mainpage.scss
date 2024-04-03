@@ -1,0 +1,15 @@
+@use 'colors' as *;
+
+.mainpage{
+    width: 100%;
+    height: calc(100% - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $royalPurple;
+    font-size: 70px;
+}
+
+.darkmode {
+    color: $white;
+}

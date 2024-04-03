@@ -10,7 +10,9 @@ export const Header = () => {
   const [darkMode, setDarkMode] = useRecoilState(darkModeState);
   return (
     <div className="header-container">
-      <div className="title">gyuri-portfolio</div>
+      <div className={`${darkMode ? 'darkmode' : 'lightmode'} title`}>
+        gyuri-portfolio
+      </div>
       <div className="icon-container">
         <button
           type="button"
