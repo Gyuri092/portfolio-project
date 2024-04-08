@@ -1,0 +1,17 @@
+@use 'reset';
+
+@use 'colors' as *;
+
+.rootpage{
+  padding: 30px 30px;
+  width: 100%;
+  height: 100%;
+}
+
+.darkmode {
+  background-color: $charcoalGray;
+}
+
+.lightmode {
+  background-color: $white;
+}

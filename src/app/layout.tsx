@@ -1,22 +1,24 @@
+import '@/styles/global.scss';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import '../../styles/global.scss';
-
-const inter = Inter({ subsets: ['latin'] });
+import { RecoilRootWrapper } from './RecoilRootWrapper';
 
 export const metadata: Metadata = {
   title: 'Gyuri-Portpolio',
   description: 'This is Gyuri’s portfolio website.',
 };
 
-export default function RootLayout({
+export const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
     <html lang="ko">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <RecoilRootWrapper>{children}</RecoilRootWrapper>
+      </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
