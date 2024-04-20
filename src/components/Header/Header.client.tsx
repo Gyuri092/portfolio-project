@@ -12,7 +12,7 @@ import { useRecoilState } from 'recoil';
 
 export const Header = (props: { handle: FullScreenHandle }) => {
   const [darkMode, setDarkMode] = useRecoilState(darkModeState);
-  const [isFullScreen, setIsFullScreen] = useState(false);
+  const [isFullScreen, setIsFullScreen] = useState(true);
   const { handle } = props;
   const fullScreenIcon = darkMode ? (
     <FullScreenIconInDarkMode />
@@ -26,7 +26,9 @@ export const Header = (props: { handle: FullScreenHandle }) => {
   );
   return (
     <div className={`${darkMode ? 'darkmode' : 'lightmode'} header-container`}>
-      <div className="title">gyuri-portfolio</div>
+      <div className={`${darkMode ? 'darkmode' : 'lightmode'} title`}>
+        gyuri-portfolio
+      </div>
       <div className="icon-container">
         <button
           type="button"
