@@ -1,42 +1,41 @@
 @use 'colors' as *;
 
-.mainpage{
-    width: 100%;
-    height: calc(100% - 80px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: $royalPurple;
-    font-size: 70px;
+.mainpage {
+  width: 100%;
+  height: calc(100% - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $royalPurple;
+  font-size: 70px;
 }
 
-
 .mainpage-text {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 @keyframes blink-effect {
-    50% {
-      opacity: 0;
-    }
+  50% {
+    opacity: 0;
+  }
 }
 
 .mainpage-text::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    right: -10px;
-    width: 4px;
-    height: 100%;
-    background-color: $royalPurple; 
-    animation: blink-effect 1s step-end infinite;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 4px;
+  height: 100%;
+  background-color: $royalPurple;
+  animation: blink-effect 1s step-end infinite;
 }
 
 .darkmode {
-    color: $white;
-    .mainpage-text::after {
-        background-color: $white;
-    }
+  color: $white;
+  .mainpage-text::after {
+    background-color: $white;
+  }
 }
