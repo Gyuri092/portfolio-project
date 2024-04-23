@@ -23,6 +23,7 @@
 }
 
 .skills-page-contents {
+  width: 950px;
   height: 60%;
   display: flex;
   flex-direction: column;
@@ -66,7 +67,11 @@ button {
 }
 
 .contents-detail {
+  font-size: 20px;
   padding: 4px 4px;
   border-radius: 5px;
   border: 1px solid $pastelLilac;
+  p:nth-of-type(odd) {
+    font-weight: 600;
+  }
 }
