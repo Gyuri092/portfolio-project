@@ -18,11 +18,10 @@ export const SkillsPage = () => {
             <div key={key}>
               <p className="subtitle">{key}</p>
               <ul>
-                {value.split('\n').map((skillName, skillNameIndex) => (
+                {value.split('\n').map((skillName) => (
                   <SkillNameList
                     key={skillName}
                     skillName={skillName}
-                    skillNameIndex={skillNameIndex}
                     keyName={key}
                   />
                 ))}
