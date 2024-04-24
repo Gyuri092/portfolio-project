@@ -16,15 +16,15 @@ export const SkillNameList = (props: Props) => {
     'JavaScript, TypeScript',
     'Oracle, MS-SQL',
   ];
-  const whenTextArray = contentsJson.when;
-  const whyTextArray = contentsJson.why;
 
-  const whenText = useMemo(() => {
-    return whenTextArray.find((whenElem) => whenElem.skill === clickedSkill);
-  }, [clickedSkill, whenTextArray]);
-  const whyText = useMemo(() => {
-    return whyTextArray.find((whyElem) => whyElem.skill === clickedSkill);
-  }, [clickedSkill, whyTextArray]);
+  const detailText = useMemo(() => {
+    return {
+      when: contentsJson.when.find(
+        (whenElem) => whenElem.skill === clickedSkill,
+      ),
+      why: contentsJson.why.find((whyElem) => whyElem.skill === clickedSkill),
+    };
+  }, [clickedSkill]);
 
   const generalSkillButton = skillName
     .split(', ')
@@ -58,9 +58,9 @@ export const SkillNameList = (props: Props) => {
       clickedSkill === eachSkillName && (
         <div key={eachSkillName} className="contents-detail">
           <p>When?</p>
-          <p>{whenText?.content}</p>
+          <p>{detailText.when?.content}</p>
           <p>Why?</p>
-          <p>{whyText?.content}</p>
+          <p>{detailText.why?.content}</p>
         </div>
       ),
   );
@@ -70,9 +70,9 @@ export const SkillNameList = (props: Props) => {
       clickedSkill === exceptionSkillElem && (
         <div key={exceptionSkillElem} className="contents-detail">
           <p>When?</p>
-          <p>{whenText?.content}</p>
+          <p>{detailText.when?.content}</p>
           <p>Why?</p>
-          <p>{whyText?.content}</p>
+          <p>{detailText.why?.content}</p>
         </div>
       ),
   );
