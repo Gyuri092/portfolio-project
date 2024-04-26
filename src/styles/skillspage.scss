@@ -23,7 +23,7 @@
 }
 
 .skills-page-contents {
-  width: 950px;
+  width: 560px;
   height: 60%;
   display: flex;
   flex-direction: column;
@@ -50,6 +50,7 @@
   color: $charcoalGray;
   font-size: 24px;
   list-style: inside;
+  margin-bottom: 10px;
 }
 
 button {
