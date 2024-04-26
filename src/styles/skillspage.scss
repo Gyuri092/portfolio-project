@@ -1,11 +1,35 @@
 @use 'colors' as *;
 
-.page-contents {
-  width: 560px;
-  height: 60%;
+
+@mixin page-contents($height:50%) {
+  height: $height;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  line-height: 1.7;
+  animation: fadein 2s;
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }
 
-.contents {
+.skills-page-contents {
+  @include page-contents(60%);
+  width: 560px;
+}
+
+@mixin contents {
+  color: $charcoalGray;
+  font-size: 24px;
+}
+
+.skills-page-list-contents {
+  @include contents;
   list-style: inside;
   margin-bottom: 10px;
 }

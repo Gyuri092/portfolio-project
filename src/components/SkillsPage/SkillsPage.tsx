@@ -12,7 +12,7 @@ export const SkillsPage = () => {
   return (
     <div className="page-container">
       <div className="page-title">Skills</div>
-      <div className="page-contents">
+      <div className="skills-page-contents">
         {Object.entries(skillsOject).map(([key, value]) => {
           return (
             <div key={key}>
