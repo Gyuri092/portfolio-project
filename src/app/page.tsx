@@ -1,5 +1,6 @@
 'use client';
 
+import { ContactPage } from '@/components/ContactPage/ContactPage';
 import { Header } from '@/components/Header/Header.client';
 import { MainPage } from '@/components/MainPage/MainPage';
 import { ProfilePage } from '@/components/ProfilePage/ProfilePage';
@@ -18,6 +19,7 @@ export const Page = () => {
         <MainPage />
         <ProfilePage />
         <SkillsPage />
+        <ContactPage />
       </FullScreen>
     </div>
   );
