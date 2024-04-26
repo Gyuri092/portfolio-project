@@ -10,9 +10,9 @@ export const SkillsPage = () => {
   };
 
   return (
-    <div className="skills-page-container">
-      <div className="skills-page-title">Skills</div>
-      <div className="skills-page-contents">
+    <div className="page-container">
+      <div className="page-title">Skills</div>
+      <div className="page-contents">
         {Object.entries(skillsOject).map(([key, value]) => {
           return (
             <div key={key}>
