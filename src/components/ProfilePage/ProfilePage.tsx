@@ -1,5 +1,3 @@
-import '@/styles/profilepage.scss';
-
 export const ProfilePage = () => {
   const objects = {
     학력: '명지대학교 정보통신공학과 2015.03 - 2020.02',
@@ -8,9 +6,9 @@ export const ProfilePage = () => {
     자격증: '정보처리기사 (한국산업인력공단) 2021.06',
   };
   return (
-    <div className="profile-page-container">
-      <div className="profile-page-title">Profile</div>
-      <div className="profile-page-contents">
+    <div className="page-container">
+      <div className="page-title">Profile</div>
+      <div className="page-contents">
         {Object.entries(objects).map(([key, value]) => {
           return (
             <div key={key}>

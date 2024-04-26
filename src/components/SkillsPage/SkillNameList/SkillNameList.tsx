@@ -90,7 +90,7 @@ export const SkillNameList = (props: Props) => {
       );
 
   return (
-    <li className="contents">
+    <li className="skills-page-list-contents">
       {skillNameButton}
       {skillDetail}
     </li>
