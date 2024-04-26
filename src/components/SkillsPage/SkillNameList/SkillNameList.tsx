@@ -31,10 +31,17 @@ export const SkillNameList = (props: Props) => {
         (exceptionSkillElem) =>
           skillName === exceptionSkillElem && (
             <button
-              key={skillName}
+              key={`btn-${skillName}`}
               className={`${keyName} ${clickedSkill === exceptionSkillElem && 'clicked-button'}`}
               type="button"
-              onClick={() => keyName !== 'Tools' && setClickedSkill(skillName)}
+              onClick={() => {
+                if (keyName === 'Tools') return;
+                if (clickedSkill === skillName) {
+                  setClickedSkill('');
+                } else {
+                  setClickedSkill(skillName);
+                }
+              }}
             >
               {skillName}
             </button>
@@ -42,10 +49,17 @@ export const SkillNameList = (props: Props) => {
       )
     : skillName.split(', ').map((eachSkillName, eachSkillNameIndex) => (
         <button
-          key={eachSkillName}
+          key={`btn-${eachSkillName}`}
           className={`${keyName} ${clickedSkill === eachSkillName && 'clicked-button'}`}
           type="button"
-          onClick={() => keyName !== 'Tools' && setClickedSkill(eachSkillName)}
+          onClick={() => {
+            if (keyName === 'Tools') return;
+            if (clickedSkill === eachSkillName) {
+              setClickedSkill('');
+            } else {
+              setClickedSkill(eachSkillName);
+            }
+          }}
         >
           {`${eachSkillName}${eachSkillNameIndex !== skillName.split(',').length - 1 ? ',' : ''}`}
         </button>
@@ -55,7 +69,7 @@ export const SkillNameList = (props: Props) => {
     ? exceptionSkills.map(
         (exceptionSkillElem) =>
           clickedSkill === exceptionSkillElem && (
-            <div key={exceptionSkillElem} className="contents-detail">
+            <div key={`div-${exceptionSkillElem}`} className="contents-detail">
               <p>When?</p>
               <p>{detailText.when?.content}</p>
               <p>Why?</p>
@@ -66,7 +80,7 @@ export const SkillNameList = (props: Props) => {
     : skillName.split(', ').map(
         (eachSkillName) =>
           clickedSkill === eachSkillName && (
-            <div key={eachSkillName} className="contents-detail">
+            <div key={`div-${eachSkillName}`} className="contents-detail">
               <p>When?</p>
               <p>{detailText.when?.content}</p>
               <p>Why?</p>
