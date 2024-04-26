@@ -32,7 +32,7 @@ export const SkillNameList = (props: Props) => {
           skillName === exceptionSkillElem && (
             <button
               key={skillName}
-              className={keyName}
+              className={`${keyName} ${clickedSkill === exceptionSkillElem && 'clicked-button'}`}
               type="button"
               onClick={() => keyName !== 'Tools' && setClickedSkill(skillName)}
             >
@@ -43,7 +43,7 @@ export const SkillNameList = (props: Props) => {
     : skillName.split(', ').map((eachSkillName, eachSkillNameIndex) => (
         <button
           key={eachSkillName}
-          className={keyName}
+          className={`${keyName} ${clickedSkill === eachSkillName && 'clicked-button'}`}
           type="button"
           onClick={() => keyName !== 'Tools' && setClickedSkill(eachSkillName)}
         >
