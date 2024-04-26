@@ -1,3 +1,5 @@
+import '@/styles/howiworkpage.scss';
+
 export const HowIWorkPage = () => {
   return (
     <div className="howiworkpage-container">

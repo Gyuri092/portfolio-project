@@ -1,10 +1,18 @@
 import '@/styles/contactpage.scss';
-import { HowIWorkPage } from './HowIWorkPage/HowIWorkPage';
 
 export const ContactPage = () => {
   return (
     <div className="contactpage-container">
-      <HowIWorkPage />
+      <div>
+        <div>Contact</div>
+        <div>
+          <ul>
+            <li>Email</li>
+            <li>Github</li>
+            <li>Blog</li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };

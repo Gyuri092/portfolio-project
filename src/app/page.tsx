@@ -2,6 +2,7 @@
 
 import { ContactPage } from '@/components/ContactPage/ContactPage';
 import { Header } from '@/components/Header/Header.client';
+import { HowIWorkPage } from '@/components/HowIWorkPage/HowIWorkPage';
 import { MainPage } from '@/components/MainPage/MainPage';
 import { ProfilePage } from '@/components/ProfilePage/ProfilePage';
 import { SkillsPage } from '@/components/SkillsPage/SkillsPage';
@@ -19,6 +20,7 @@ export const Page = () => {
         <MainPage />
         <ProfilePage />
         <SkillsPage />
+        <HowIWorkPage />
         <ContactPage />
       </FullScreen>
     </div>
