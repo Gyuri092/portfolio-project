@@ -1,0 +1,33 @@
+{
+  "array": [
+    {
+      "title": "CS 스터디",
+      "src": "/images/csStudy.png",
+      "size": { "width": 931, "height": 572 },
+      "link": [
+        {
+          "name": "Youtube",
+          "url": "https://www.youtube.com/@blackRabbitTech"
+        },
+        {
+          "name": "개인 발표자료",
+          "url": "https://gyuri092.notion.site/CS-66d64941799045179ff4dc51a37d4501?pvs=4"
+        }
+      ],
+      "text": "3개월간 스터디 발표 영상을 유튜브에 업로드\n1개월 간 매주 스터디 주제 테크톡 형식 발표, 이후 격주로 진행\n스터디 중 학습한 내용을 총 7편의 글로 블로그 게시"
+    },
+
+    {
+      "title": "테오의 구글 스프린트",
+      "src": "/images/teoSprint.png",
+      "size": { "width": 965, "height": 591 },
+      "link": [
+        {
+          "name": "회고글",
+          "url": "https://velog.io/@gyuri092/%ED%9A%8C%EA%B3%A0-%ED%85%8C%EC%98%A4%EC%9D%98-%EC%8A%A4%ED%94%84%EB%A6%B0%ED%8A%B8-14%EA%B8%B0-%ED%9A%8C%EA%B3%A0"
+        }
+      ],
+      "text": "카카오 시니어 프론트엔드 개발자 테오가\nBDD와 SDD 를 도입한 구글 스프린트 형식으로 진행한 스프린트"
+    }
+  ]
+}
