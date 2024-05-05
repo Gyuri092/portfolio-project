@@ -1,0 +1,20 @@
+@use 'colors' as *;
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    background: $mbtiDetective;
+    height: 70%;
+}
+
+.carousel-image-container {
+    // display: flex;
+    // align-items: center;
+    border: 1px solid red;
+}
+
+button {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}

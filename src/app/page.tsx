@@ -6,6 +6,7 @@ import { Header } from '@/components/Header/Header.client';
 import { HowIWorkPage } from '@/components/HowIWorkPage/HowIWorkPage';
 import { MainPage } from '@/components/MainPage/MainPage';
 import { ProfilePage } from '@/components/ProfilePage/ProfilePage';
+import { ProjectsPage } from '@/components/ProjectsPage/ProjectsPage';
 import { SkillsPage } from '@/components/SkillsPage/SkillsPage';
 import { darkModeState } from '@/recoil/atoms';
 import { FullScreen, useFullScreenHandle } from 'react-full-screen';
@@ -21,6 +22,7 @@ export const Page = () => {
         <MainPage />
         <ProfilePage />
         <SkillsPage />
+        <ProjectsPage />
         <ExperiencePage />
         <HowIWorkPage />
         <ContactPage />

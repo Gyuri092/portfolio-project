@@ -1,0 +1,25 @@
+{
+  "array": [
+    {
+      "title": "MBTI 명탐정",
+      "src": "/images/thumnail/mbtiDetective.png",
+      "size": { "width": 334, "height": 424 }
+    },
+
+    {
+      "title": "AI Voice Studio",
+      "src": "/images/thumnail/aivoicestudio.png",
+      "size": { "width": 882, "height": 469 }
+    },
+    {
+      "title": "빌리지(BilliG)",
+      "src": "/images/thumnail/billig.png",
+      "size": { "width": 687, "height": 469 }
+    },
+    {
+      "title": "개굿(GAEGOOD)",
+      "src": "/images/thumnail/gaegood.png",
+      "size": { "width": 757, "height": 485 }
+    }
+  ]
+}
