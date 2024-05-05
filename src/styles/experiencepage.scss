@@ -1,0 +1,56 @@
+@use 'colors' as *;
+
+.experience-page-container {
+  width: 100%;
+  height: 200%;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.experience-page-box {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: $midnightBlack;
+  font-size: 20px;
+}
+
+.experience-page-title {
+  color: $royalPurple;
+  font-size: 50px;
+  margin-bottom: 50px;
+}
+
+.experience-page-subtitle {
+  color: $charcoalGray;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.experience-page-contents {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.experience-page-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 3;
+  a {
+    font-weight: 600;
+    &:hover {
+      color: $lightSilver;
+    }
+  }
+  p {
+    white-space: pre-line;
+  }
+}
