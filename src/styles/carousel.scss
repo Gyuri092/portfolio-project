@@ -1,20 +1,63 @@
 @use 'colors' as *;
 
 .carousel-container {
-    display: flex;
-    align-items: center;
-    background: $mbtiDetective;
-    height: 70%;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  height: 70%;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+}
+
+.mbtiDetectiveBg {
+  background: $mbtiDetective;
+}
+
+.whiteBg {
+  background: $white;
+}
+
+.billiGBg {
+  background: $billiG;
 }
 
 .carousel-image-container {
-    // display: flex;
-    // align-items: center;
-    border: 1px solid red;
+  display: flex;
+  transition: all 0.3s ease-out;
+  // align-items: center;
+  // height: 100%;
+  // overflow-x: auto;
 }
 
-button {
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
+.carousel-image {
+  transition: transform 0.5s ease;
+
+  // width: 31.3%;
+  flex-shrink: 0;
+  flex-grow: 1;
+  margin-left: 2%;
+}
+
+.carousel-image.active {
+  transform: scale(1.1);
+}
+
+.chevron-button-container {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chevron-button {
+  width: 50px;
+  height: 60px;
+  cursor: pointer;
+  background: none;
+  border: none;
 }
