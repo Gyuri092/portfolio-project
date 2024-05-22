@@ -27,18 +27,16 @@
 .carousel-image-container {
   display: flex;
   transition: all 0.3s ease-out;
-  // align-items: center;
-  // height: 100%;
-  // overflow-x: auto;
+  align-items: center;
 }
+
 
 .carousel-image {
   transition: transform 0.5s ease;
 
-  // width: 31.3%;
+  width: 100%;
   flex-shrink: 0;
   flex-grow: 1;
-  margin-left: 2%;
 }
 
 .carousel-image.active {

@@ -49,7 +49,7 @@ export const Carousel = () => {
       </div>
       <div
         className="carousel-image-container"
-        style={{ transform: `translateX(-${currentIndex * 50}%)` }}
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {imageData.map((elem, index) => {
           return (
@@ -58,8 +58,8 @@ export const Carousel = () => {
               key={elem.title}
               src={elem.src}
               alt={elem.title}
-              width={elem.size.width}
-              height={elem.size.height}
+              width={882}
+              height={469}
             />
           );
         })}
