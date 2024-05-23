@@ -7,12 +7,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import imageDataJson from './data/imageData.json';
 
-const backgroundColors = [
-  'mbtiDetectiveBg', // Example background colors
-  'whiteBg',
-  'billiGBg',
-  'whiteBg',
-];
+const backgroundColors = ['mbtiDetectiveBg', 'whiteBg', 'billiGBg', 'whiteBg'];
 
 export const Carousel = () => {
   const imageData = imageDataJson.array;
@@ -51,16 +46,23 @@ export const Carousel = () => {
         className="carousel-image-container"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
-        {imageData.map((elem, index) => {
+        {imageData.map((elem) => {
           return (
-            <Image
-              className={`carousel-image ${index === currentIndex ? 'active' : ''}`}
-              key={elem.title}
-              src={elem.src}
-              alt={elem.title}
-              width={882}
-              height={469}
-            />
+            <div key={elem.title} className="carousel-image-box">
+              <p
+                className={`carousel-image-title ${backgroundColors[currentIndex] === 'billiGBg' ? 'billiGBg' : ''}`}
+              >
+                {elem.title}
+              </p>
+              <Image
+                className="carousel-image"
+                src={elem.src}
+                alt={elem.title}
+                width={882}
+                height={469}
+              />
+              <button type="button" className="carousel-image-button" />
+            </div>
           );
         })}
       </div>
