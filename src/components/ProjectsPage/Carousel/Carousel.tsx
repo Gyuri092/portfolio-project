@@ -64,6 +64,16 @@ export const Carousel = () => {
           );
         })}
       </div>
+      <div className="circle-index-button-container">
+        {imageData.map((elem, index) => (
+          <button
+            className={`circle-index-button ${index === currentIndex ? 'active' : ''} ${backgroundColors[currentIndex] === 'whiteBg' ? 'whiteBg' : ''}`}
+            type="button"
+            key={elem.title}
+            onClick={() => setCurrentIndex(index)}
+          />
+        ))}
+      </div>
     </div>
   );
 };

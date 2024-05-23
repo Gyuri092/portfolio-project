@@ -2,14 +2,16 @@
 
 .carousel-container {
   display: flex;
+  flex-direction: column;
   position: relative;
   justify-content: space-between;
   align-items: center;
   width: 50%;
   height: 70%;
-  padding: 10px;
+  padding: 180px 10px 0 10px;
   transition: background-color 0.3s ease;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .mbtiDetectiveBg {
@@ -30,7 +32,6 @@
   align-items: center;
 }
 
-
 .carousel-image {
   transition: transform 0.5s ease;
 
@@ -45,6 +46,7 @@
 
 .chevron-button-container {
   position: absolute;
+  top: 50%;
   z-index: 1;
   width: 100%;
   display: flex;
@@ -58,4 +60,27 @@
   cursor: pointer;
   background: none;
   border: none;
+}
+
+.circle-index-button-container {
+  width: 200px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.circle-index-button {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: $slateGray;
+}
+
+.circle-index-button.active {
+  background: $white;
+}
+
+.circle-index-button.active.whiteBg {
+  background: $lightSilver;
 }
