@@ -1,0 +1,46 @@
+@use 'colors' as *;
+
+.modal-background {
+  background: $slateGray;
+  opacity: 0.7;
+}
+
+.modal-container {
+  width: 1056px;
+  height: 816px;
+  background: $white;
+  border-radius: 10px;
+  padding: 30px;
+  color: $midnightBlack;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.modal-contents-title {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.modal-contents-date {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.modal-contents-summary {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.modal-github-link-container {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.modal-skills-list {
+  font-size: 14px;
+}
+.modal-skills-part {
+  p:nth-of-type(1) {
+    font-weight: 600;
+  }
+}
