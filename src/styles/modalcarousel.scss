@@ -3,5 +3,8 @@
 .modal-carousel-container {
     width: 412px;
     height: 630px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: $lightSilver;
 }

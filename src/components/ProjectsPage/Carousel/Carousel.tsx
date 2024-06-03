@@ -2,9 +2,11 @@ import ChevronLeftIcon from '@/icons/chevronLeft.svg';
 import ChevronLeftGrayIcon from '@/icons/chevronLeftGray.svg';
 import ChevronRightIcon from '@/icons/chevronRight.svg';
 import ChevronRightGrayIcon from '@/icons/chevronRightGray.svg';
+import { currentCarouselIndexState, showModalState } from '@/recoil/atoms';
 import '@/styles/carousel.scss';
 import Image from 'next/image';
 import { useState } from 'react';
+import { useRecoilState } from 'recoil';
 import imageDataJson from './data/imageData.json';
 
 const backgroundColors = ['mbtiDetectiveBg', 'whiteBg', 'billiGBg', 'whiteBg'];
@@ -12,6 +14,8 @@ const backgroundColors = ['mbtiDetectiveBg', 'whiteBg', 'billiGBg', 'whiteBg'];
 export const Carousel = () => {
   const imageData = imageDataJson.array;
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [, setShowModal] = useRecoilState(showModalState);
+  const [, setCurrentCarouselIndex] = useRecoilState(currentCarouselIndexState);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex: number) => (prevIndex + 1) % imageData.length);
@@ -61,7 +65,14 @@ export const Carousel = () => {
                 width={882}
                 height={469}
               />
-              <button type="button" className="carousel-image-button" />
+              <button
+                type="button"
+                className="carousel-image-button"
+                onClick={() => {
+                  setShowModal((prev) => !prev);
+                  setCurrentCarouselIndex(currentIndex);
+                }}
+              />
             </div>
           );
         })}

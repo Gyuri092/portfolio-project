@@ -1,49 +1,74 @@
-import GithubInDarkMode from '@/icons/githubInDarkMode.svg';
+import CloseIcon from '@/icons/close.svg';
+import GithubIcon from '@/icons/githubBlack.svg';
+import { currentCarouselIndexState, showModalState } from '@/recoil/atoms';
 import '@/styles/modal.scss';
+import { SkillListObjectType } from '@/types/types';
+import { useMemo } from 'react';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { ModalCarousel } from './ModalCarousel/ModalCarousel';
+import projectDetailJson from './data/projectContentsDetail.json';
 import skillListJson from './data/skillList.json';
 
 export const Modal = () => {
-  const skillListArray = skillListJson.skills;
+  const skillListArray: SkillListObjectType[] = skillListJson.skills;
+  const projectDetailArray = projectDetailJson.contents;
+
+  const [, setShowModal] = useRecoilState(showModalState);
+  const currentCarouselIndex = useRecoilValue(currentCarouselIndexState);
+
+  const selectedProject = useMemo(() => {
+    return projectDetailArray[currentCarouselIndex];
+  }, [currentCarouselIndex, projectDetailArray]);
+
+  const selectedProjectSkillList = useMemo(() => {
+    return skillListArray[currentCarouselIndex];
+  }, [currentCarouselIndex, skillListArray]);
+
+  const objectKeys = useMemo(() => {
+    return selectedProjectSkillList && Object.keys(selectedProjectSkillList);
+  }, [selectedProjectSkillList]);
+
   return (
     <div className="modal-background">
       <div className="modal-container">
         <ModalCarousel />
         <div>
-          <a className="modal-contents-title" href="fas">
-            제목
-          </a>
-          <p className="modal-contents-date">날짜</p>
-          <p className="modal-contents-summary">개요</p>
+          <div className="modal-contents-title-container">
+            <a className="modal-contents-title" href={selectedProject?.link}>
+              {selectedProject?.title}
+            </a>
+            <button type="button" onClick={() => setShowModal((prev) => !prev)}>
+              <CloseIcon />
+            </button>
+          </div>
+          <p className="modal-contents-date">{selectedProject?.date}</p>
+          <p className="modal-contents-summary">{selectedProject?.summary}</p>
           <div className="modal-github-link-container">
             <p>Github : </p>
-            <GithubInDarkMode />
-            <a href="absc">깃허브링크</a>
+            <GithubIcon />
+            <a href={selectedProject?.github}>{selectedProject?.github}</a>
           </div>
-          <p>내용</p>
-          <div>
-            {skillListArray.map((elem) => {
-              return (
-                <div className="modal-skills-list" key={elem.title}>
-                  <div className="modal-skills-part">
-                    <p>Front-End</p>
-                    <p>{elem['Front-End']}</p>
-                  </div>
-                  <div>
-                    <p>Back-End</p>
-                    <p>{elem['Back-End']}</p>
-                  </div>
-                  <div>
-                    <p>Database</p>
-                    <p>{elem.Database}</p>
-                  </div>
-                  <div>
-                    <p>Deployment</p>
-                    <p>{elem.Deployment}</p>
-                  </div>
-                </div>
-              );
-            })}
+          <p>{selectedProject?.explanation}</p>
+
+          <div
+            className="modal-skills-list"
+            key={selectedProjectSkillList?.title}
+          >
+            {objectKeys &&
+              objectKeys.map((elem) => {
+                if (
+                  selectedProjectSkillList &&
+                  selectedProjectSkillList[elem]
+                ) {
+                  return (
+                    <div key={elem} className="modal-skills-part">
+                      <p>{elem}</p>
+                      <p>{selectedProjectSkillList[elem]}</p>
+                    </div>
+                  );
+                }
+                return null;
+              })}
           </div>
         </div>
       </div>
