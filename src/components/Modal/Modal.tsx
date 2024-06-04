@@ -30,25 +30,47 @@ export const Modal = () => {
 
   return (
     <div className="modal-background">
+      <button
+        className="modal-background-close-button"
+        type="button"
+        onClick={() => setShowModal((prev) => !prev)}
+      />
       <div className="modal-container">
         <ModalCarousel />
-        <div>
-          <div className="modal-contents-title-container">
-            <a className="modal-contents-title" href={selectedProject?.link}>
+        <div className="modal-contents-container">
+          <div>
+            <a
+              className="modal-contents-title"
+              href={selectedProject?.link}
+              target="_blank"
+              rel="noreferrer"
+            >
               {selectedProject?.title}
             </a>
-            <button type="button" onClick={() => setShowModal((prev) => !prev)}>
+            <button
+              className="modal-close-button"
+              type="button"
+              onClick={() => setShowModal((prev) => !prev)}
+            >
               <CloseIcon />
             </button>
+            <p className="modal-contents-date">{selectedProject?.date}</p>
+            <p className="modal-contents-summary">{selectedProject?.summary}</p>
+            {selectedProject?.github && (
+              <div className="modal-github-link-container">
+                <p>Github : </p>
+                <GithubIcon />
+                <a
+                  href={selectedProject?.github}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {selectedProject?.github}
+                </a>
+              </div>
+            )}
+            <p>{selectedProject?.explanation}</p>
           </div>
-          <p className="modal-contents-date">{selectedProject?.date}</p>
-          <p className="modal-contents-summary">{selectedProject?.summary}</p>
-          <div className="modal-github-link-container">
-            <p>Github : </p>
-            <GithubIcon />
-            <a href={selectedProject?.github}>{selectedProject?.github}</a>
-          </div>
-          <p>{selectedProject?.explanation}</p>
 
           <div
             className="modal-skills-list"
@@ -58,7 +80,8 @@ export const Modal = () => {
               objectKeys.map((elem) => {
                 if (
                   selectedProjectSkillList &&
-                  selectedProjectSkillList[elem]
+                  selectedProjectSkillList[elem] &&
+                  elem !== 'title'
                 ) {
                   return (
                     <div key={elem} className="modal-skills-part">
