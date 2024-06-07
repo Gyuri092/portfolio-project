@@ -8,42 +8,56 @@ import modalCarouselImageJson from './data/modalCarouselImage.json';
 export const ModalCarousel = () => {
   const imageJsonArray = modalCarouselImageJson.images;
   const currentCarouselIndex = useRecoilValue(currentCarouselIndexState);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [carouselIndex, setCarouselIndex] = useState(1);
+  const [carouselTransition, setCarouselTransition] = useState('');
 
   const imageSrc = useMemo(() => {
     return imageJsonArray[currentCarouselIndex] ?? '';
   }, [currentCarouselIndex, imageJsonArray]);
 
-  const imageSrcArray = useMemo(() => imageSrc.split('\n'), [imageSrc]);
+  const imageSrcArray = useMemo(() => {
+    const splitArray = imageSrc.split('\n');
+    return [
+      splitArray[splitArray.length - 1],
+      ...splitArray,
+      splitArray[0],
+    ] as string[];
+  }, [imageSrc]);
 
-  const nextSlide = useCallback(() => {
-    if (currentIndex >= imageSrcArray.length + 1) {
-      setCurrentIndex(1);
-      return;
-    }
-    setCurrentIndex((prev) => (prev + 1) % imageSrcArray.length);
-  }, [currentIndex, imageSrcArray.length]);
+  const updateIndexAndTransition = useCallback((index: number) => {
+    setTimeout(() => {
+      setCarouselIndex(index);
+      setCarouselTransition('none');
+    }, 10);
+  }, []);
 
   useEffect(() => {
-    const timeout = setInterval(() => {
-      nextSlide();
+    const timer = setInterval(() => {
+      if (carouselIndex === imageSrcArray.length - 1) {
+        updateIndexAndTransition(1);
+      } else if (carouselIndex === 0) {
+        updateIndexAndTransition(imageSrcArray.length - 1);
+      }
+      setCarouselIndex((prev) => (prev + 1) % imageSrcArray.length);
+      setCarouselTransition('transform 0.5s ease-in-out');
     }, 2000);
-    return () => clearInterval(timeout);
-  }, [nextSlide]);
+
+    return () => clearInterval(timer);
+  }, [carouselIndex, imageSrcArray.length, updateIndexAndTransition]);
+
+  const getCarouselStyles = () => {
+    return {
+      transform: `translateX(-${carouselIndex * 100}%)`,
+      transition: `${carouselTransition}`,
+    };
+  };
 
   return (
     <div className="modal-carousel-container">
       <div
         className="modal-carousel-image-container"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        style={getCarouselStyles()}
       >
-        <Image
-          className="modal-carousel-image"
-          src={imageSrcArray[imageSrcArray.length - 1] ?? ''}
-          alt={imageSrcArray[imageSrcArray.length - 1] ?? ''}
-          width={412}
-          height={630}
-        />
         {imageSrcArray.map((image) => (
           <Image
             key={image}
@@ -54,13 +68,6 @@ export const ModalCarousel = () => {
             height={630}
           />
         ))}
-        <Image
-          className="modal-carousel-image"
-          src={imageSrcArray[0] ?? ''}
-          alt={imageSrcArray[0] ?? ''}
-          width={412}
-          height={630}
-        />
       </div>
     </div>
   );
