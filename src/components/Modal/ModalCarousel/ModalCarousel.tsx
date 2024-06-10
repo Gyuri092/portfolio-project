@@ -8,7 +8,7 @@ import modalCarouselImageJson from './data/modalCarouselImage.json';
 export const ModalCarousel = () => {
   const imageJsonArray = modalCarouselImageJson.images;
   const currentCarouselIndex = useRecoilValue(currentCarouselIndexState);
-  const [carouselIndex, setCarouselIndex] = useState(1);
+  const [carouselIndex, setCarouselIndex] = useState(0);
   const [carouselTransition, setCarouselTransition] = useState('');
 
   const imageSrc = useMemo(() => {
@@ -17,11 +17,7 @@ export const ModalCarousel = () => {
 
   const imageSrcArray = useMemo(() => {
     const splitArray = imageSrc.split('\n');
-    return [
-      splitArray[splitArray.length - 1],
-      ...splitArray,
-      splitArray[0],
-    ] as string[];
+    return [...splitArray, splitArray[0]] as string[];
   }, [imageSrc]);
 
   const updateIndexAndTransition = useCallback((index: number) => {
@@ -31,19 +27,26 @@ export const ModalCarousel = () => {
     }, 10);
   }, []);
 
+  const controlTime = useMemo(() => {
+    return carouselTransition === 'none' ? 10 : 2000;
+  }, [carouselTransition]);
+
   useEffect(() => {
     const timer = setInterval(() => {
       if (carouselIndex === imageSrcArray.length - 1) {
-        updateIndexAndTransition(1);
-      } else if (carouselIndex === 0) {
-        updateIndexAndTransition(imageSrcArray.length - 1);
+        updateIndexAndTransition(0);
       }
       setCarouselIndex((prev) => (prev + 1) % imageSrcArray.length);
       setCarouselTransition('transform 0.5s ease-in-out');
-    }, 2000);
+    }, controlTime);
 
     return () => clearInterval(timer);
-  }, [carouselIndex, imageSrcArray.length, updateIndexAndTransition]);
+  }, [
+    carouselIndex,
+    controlTime,
+    imageSrcArray.length,
+    updateIndexAndTransition,
+  ]);
 
   const getCarouselStyles = () => {
     return {
@@ -58,9 +61,9 @@ export const ModalCarousel = () => {
         className="modal-carousel-image-container"
         style={getCarouselStyles()}
       >
-        {imageSrcArray.map((image) => (
+        {imageSrcArray.map((image, index) => (
           <Image
-            key={image}
+            key={`${index - 0}`}
             className="modal-carousel-image"
             src={image}
             alt={image}
