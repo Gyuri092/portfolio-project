@@ -20,9 +20,9 @@ export const ModalCarousel = () => {
     return [...splitArray, splitArray[0]] as string[];
   }, [imageSrc]);
 
-  const updateIndexAndTransition = useCallback((index: number) => {
+  const resetIndexAndTransition = useCallback(() => {
     setTimeout(() => {
-      setCarouselIndex(index);
+      setCarouselIndex(0);
       setCarouselTransition('none');
     }, 10);
   }, []);
@@ -34,7 +34,7 @@ export const ModalCarousel = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       if (carouselIndex === imageSrcArray.length - 1) {
-        updateIndexAndTransition(0);
+        resetIndexAndTransition();
       }
       setCarouselIndex((prev) => (prev + 1) % imageSrcArray.length);
       setCarouselTransition('transform 0.5s ease-in-out');
@@ -45,7 +45,7 @@ export const ModalCarousel = () => {
     carouselIndex,
     controlTime,
     imageSrcArray.length,
-    updateIndexAndTransition,
+    resetIndexAndTransition,
   ]);
 
   const getCarouselStyles = () => {
@@ -64,7 +64,6 @@ export const ModalCarousel = () => {
         {imageSrcArray.map((image, index) => (
           <Image
             key={`${index - 0}`}
-            className="modal-carousel-image"
             src={image}
             alt={image}
             width={412}
