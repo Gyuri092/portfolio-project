@@ -16,5 +16,18 @@
 .projects-page-title {
   color: $royalPurple;
   font-size: 50px;
-  margin-bottom: 50px;
 }
+
+.projects-page-button-container {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  button {
+    cursor: pointer;
+    :hover {
+      opacity: 0.6;
+      transition: opacity 0.3s ease-in-out;
+    }
+  }
+}
+
