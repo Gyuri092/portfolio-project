@@ -1,6 +1,10 @@
 import CloseIcon from '@/icons/close.svg';
 import GithubIcon from '@/icons/githubBlack.svg';
-import { currentCarouselIndexState, showModalState } from '@/recoil/atoms';
+import {
+  currentCarouselIndexState,
+  showModalState,
+  stopIntervalState,
+} from '@/recoil/atoms';
 import '@/styles/modal.scss';
 import { SkillListObjectType } from '@/types/types';
 import { useMemo } from 'react';
@@ -13,15 +17,16 @@ export const Modal = () => {
   const skillListArray: SkillListObjectType[] = skillListJson.skills;
   const projectDetailArray = projectDetailJson.contents;
 
+  const [, setStopInterval] = useRecoilState(stopIntervalState);
   const [, setShowModal] = useRecoilState(showModalState);
   const currentCarouselIndex = useRecoilValue(currentCarouselIndexState);
 
   const selectedProject = useMemo(() => {
-    return projectDetailArray[currentCarouselIndex];
+    return projectDetailArray[currentCarouselIndex] ?? projectDetailArray[0];
   }, [currentCarouselIndex, projectDetailArray]);
 
   const selectedProjectSkillList = useMemo(() => {
-    return skillListArray[currentCarouselIndex];
+    return skillListArray[currentCarouselIndex] ?? skillListArray[0];
   }, [currentCarouselIndex, skillListArray]);
 
   const objectKeys = useMemo(() => {
@@ -33,7 +38,10 @@ export const Modal = () => {
       <button
         className="modal-background-close-button"
         type="button"
-        onClick={() => setShowModal((prev) => !prev)}
+        onClick={() => {
+          setShowModal((prev) => !prev);
+          setStopInterval((prev) => !prev);
+        }}
       />
       <div className="modal-container">
         <ModalCarousel />
@@ -50,7 +58,10 @@ export const Modal = () => {
             <button
               className="modal-close-button"
               type="button"
-              onClick={() => setShowModal((prev) => !prev)}
+              onClick={() => {
+                setShowModal((prev) => !prev);
+                setStopInterval((prev) => !prev);
+              }}
             >
               <CloseIcon />
             </button>

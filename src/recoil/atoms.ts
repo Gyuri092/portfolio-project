@@ -15,4 +15,15 @@ const currentCarouselIndexState = atom({
   default: 0,
 });
 
-export { currentCarouselIndexState, darkModeState, showModalState };
+const stopIntervalState = atom({
+  key: 'stopIntervalState',
+  default: false,
+});
+
+export {
+  currentCarouselIndexState,
+  darkModeState,
+  showModalState,
+  stopIntervalState
+};
+

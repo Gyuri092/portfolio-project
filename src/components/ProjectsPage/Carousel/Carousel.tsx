@@ -2,31 +2,90 @@ import ChevronLeftIcon from '@/icons/chevronLeft.svg';
 import ChevronLeftGrayIcon from '@/icons/chevronLeftGray.svg';
 import ChevronRightIcon from '@/icons/chevronRight.svg';
 import ChevronRightGrayIcon from '@/icons/chevronRightGray.svg';
-import { currentCarouselIndexState, showModalState } from '@/recoil/atoms';
+import {
+  currentCarouselIndexState,
+  showModalState,
+  stopIntervalState,
+} from '@/recoil/atoms';
 import '@/styles/carousel.scss';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import imageDataJson from './data/imageData.json';
 
-const backgroundColors = ['mbtiDetectiveBg', 'whiteBg', 'billiGBg', 'whiteBg'];
+const backgroundColors = [
+  'mbtiDetectiveBg',
+  'whiteBg',
+  'billiGBg',
+  'whiteBg',
+  'mbtiDetectiveBg',
+];
 
 export const Carousel = () => {
   const imageData = imageDataJson.array;
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [carouselTransition, setCarouselTransition] = useState('');
+  const [stopInterval, setStopInterval] = useRecoilState(stopIntervalState);
   const [, setShowModal] = useRecoilState(showModalState);
   const [, setCurrentCarouselIndex] = useRecoilState(currentCarouselIndexState);
 
+  const imageSrcArray = useMemo(() => {
+    return [...imageData, imageData[0]] as string[];
+  }, [imageData]);
+
+  const controlTime = useMemo(() => {
+    return carouselTransition === 'none' ? 10 : 3000;
+  }, [carouselTransition]);
+
   const nextSlide = () => {
-    setCurrentIndex((prevIndex: number) => (prevIndex + 1) % imageData.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % imageData.length);
   };
 
   const prevSlide = () => {
     setCurrentIndex(
-      (prevIndex: number) =>
-        (prevIndex - 1 + imageData.length) % imageData.length,
+      (prevIndex) => (prevIndex - 1 + imageData.length) % imageData.length,
     );
   };
+
+  const getCarouselStyles = () => {
+    return {
+      transform: `translateX(-${currentIndex * 100}%)`,
+      transition: `${carouselTransition}`,
+    };
+  };
+
+  const resetIndexAndTransition = () => {
+    setTimeout(() => {
+      setCurrentIndex(0);
+      setCarouselTransition('none');
+    }, 10);
+  };
+
+  const getButtonClassName = (index: number) => {
+    const initialClassName = 'circle-index-button';
+    const isActive =
+      index === (currentIndex === imageSrcArray.length - 1 ? 0 : currentIndex)
+        ? 'active'
+        : '';
+    const isWhiteBackgroud =
+      backgroundColors[currentIndex] === 'whiteBg' ? 'whiteBg' : '';
+    return [initialClassName, isActive, isWhiteBackgroud].join(' ');
+  };
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (stopInterval) {
+        return;
+      }
+      if (currentIndex === imageSrcArray.length - 1) {
+        resetIndexAndTransition();
+      }
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % imageSrcArray.length);
+      setCarouselTransition('transform 0.5s ease-in-out');
+    }, controlTime);
+
+    return () => clearInterval(timer);
+  }, [controlTime, currentIndex, imageSrcArray.length, stopInterval]);
 
   return (
     <div className={`carousel-container ${backgroundColors[currentIndex]}`}>
@@ -46,22 +105,21 @@ export const Carousel = () => {
           )}
         </button>
       </div>
-      <div
-        className="carousel-image-container"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-      >
-        {imageData.map((elem) => {
+      <div className="carousel-image-container" style={getCarouselStyles()}>
+        {imageSrcArray.map((elem, index) => {
+          const title = elem.split('\n')[0] as string;
+          const src = elem.split('\n')[1] as string;
           return (
-            <div key={elem.title} className="carousel-image-box">
+            <div key={`${index - 0}`} className="carousel-image-box">
               <p
                 className={`carousel-image-title ${backgroundColors[currentIndex] === 'billiGBg' ? 'billiGBg' : ''}`}
               >
-                {elem.title}
+                {title}
               </p>
               <Image
                 className="carousel-image"
-                src={elem.src}
-                alt={elem.title}
+                src={src}
+                alt={title}
                 width={882}
                 height={469}
               />
@@ -71,6 +129,7 @@ export const Carousel = () => {
                 onClick={() => {
                   setShowModal((prev) => !prev);
                   setCurrentCarouselIndex(currentIndex);
+                  setStopInterval((prev) => !prev);
                 }}
               />
             </div>
@@ -78,14 +137,18 @@ export const Carousel = () => {
         })}
       </div>
       <div className="circle-index-button-container">
-        {imageData.map((elem, index) => (
-          <button
-            className={`circle-index-button ${index === currentIndex ? 'active' : ''} ${backgroundColors[currentIndex] === 'whiteBg' ? 'whiteBg' : ''}`}
-            type="button"
-            key={elem.title}
-            onClick={() => setCurrentIndex(index)}
-          />
-        ))}
+        {imageSrcArray.map((elem, index) => {
+          const title = elem.split('\n')[0] as string;
+          if (index === imageSrcArray.length - 1) return null;
+          return (
+            <button
+              className={getButtonClassName(index)}
+              type="button"
+              key={title}
+              onClick={() => setCurrentIndex(index)}
+            />
+          );
+        })}
       </div>
     </div>
   );

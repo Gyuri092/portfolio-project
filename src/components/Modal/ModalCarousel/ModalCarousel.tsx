@@ -12,7 +12,7 @@ export const ModalCarousel = () => {
   const [carouselTransition, setCarouselTransition] = useState('');
 
   const imageSrc = useMemo(() => {
-    return imageJsonArray[currentCarouselIndex] ?? '';
+    return imageJsonArray[currentCarouselIndex] ?? imageJsonArray[0] ?? '';
   }, [currentCarouselIndex, imageJsonArray]);
 
   const imageSrcArray = useMemo(() => {

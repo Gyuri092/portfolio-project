@@ -1,21 +1,8 @@
 {
   "array": [
-    {
-      "title": "MBTI 명탐정",
-      "src": "/images/thumnail/mbtiDetective.png"
-    },
-
-    {
-      "title": "AI Voice Studio",
-      "src": "/images/thumnail/aivoicestudio.png"
-    },
-    {
-      "title": "빌리지(BilliG)",
-      "src": "/images/thumnail/billig.png"
-    },
-    {
-      "title": "개굿(GAEGOOD)",
-      "src": "/images/thumnail/gaegood.png"
-    }
+    "MBTI 명탐정\n/images/thumnail/mbtiDetective.png",
+    "AI Voice Studio\n/images/thumnail/aivoicestudio.png",
+    "빌리지(BilliG)\n/images/thumnail/billig.png",
+    "개굿(GAEGOOD)\n/images/thumnail/gaegood.png"
   ]
 }
