@@ -1,0 +1,109 @@
+@use 'colors' as *;
+
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  height: 70%;
+  padding-top: 60px;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.mbtiDetectiveBg {
+  background: $mbtiDetective;
+}
+
+.whiteBg {
+  background: $white;
+}
+
+.billiGBg {
+  background: $billiG;
+}
+
+.carousel-image-container {
+  display: flex;
+  transition: all 0.3s ease-out;
+  align-items: center;
+}
+
+.carousel-image-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.carousel-image-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: $midnightBlack;
+  font-size: 46px;
+  font-weight: 600;
+  margin-bottom: 38px;
+}
+
+.carousel-image-title.billiGBg {
+  color: $white;
+}
+
+.carousel-image {
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.carousel-image-button {
+  cursor: pointer;
+  width: 86%;
+  height: 100%;
+  position: absolute;
+}
+
+.chevron-button-container {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chevron-button {
+  width: 50px;
+  height: 60px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.circle-index-button-container {
+  width: 200px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.circle-index-button {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: $slateGray;
+}
+
+.circle-index-button.active {
+  background: $white;
+}
+
+.circle-index-button.active.whiteBg {
+  background: $lightSilver;
+}

@@ -1,0 +1,94 @@
+@use 'colors' as *;
+
+.modal-background {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $lightslateGray;
+  color: $midnightBlack;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+}
+
+p {
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.modal-container {
+  width: 1120px;
+  display: flex;
+  justify-content: space-between;
+  background: $white;
+  border-radius: 10px;
+  padding: 100px 60px;
+  font-size: 16px;
+  font-weight: 400;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.modal-contents-container {
+  width: 60%;
+  margin-left: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.modal-background-close-button {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.modal-close-button {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+
+.modal-contents-title {
+  color: $midnightBlack;
+  font-size: 36px;
+  font-weight: 600;
+  &:hover {
+    transition: all 0.2s ease;
+    color: $lightSilver;
+  }
+}
+
+.modal-contents-date {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.modal-contents-summary {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.modal-github-link-container {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  :hover {
+    transition: all 0.2s ease;
+    color: $lightSilver;
+  }
+}
+
+.modal-skills-list {
+  font-size: 14px;
+}
+.modal-skills-part {
+  margin-bottom: 20px;
+  p:nth-of-type(1) {
+    font-weight: 600;
+  }
+}

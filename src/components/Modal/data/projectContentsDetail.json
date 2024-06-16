@@ -1,0 +1,36 @@
+{
+  "contents": [
+    {
+      "title": "MBTI 명탐정",
+      "link": "https://mbti-detective.netlify.app/",
+      "date": "2023.02 - 2023.02",
+      "summary": "나의 MBTI를 다른 사람이 맞춰보고 비교, 공유해보는 웹 페이지",
+      "github": "https://github.com/teo14-detective/mbti-detective",
+      "explanation": "7명의 팀원과 5일간 스프린트를 경험한 프로젝트 입니다.\n실 개발 시간 2일 소요하여 서비스를 완성했습니다.\nBDD와 SDD 방식을 사용하여 서비스에 필요한 기능을 도출하였으며\n구현하기로 한 기능 100% 데모데이에 성공적으로 구현 및 발표했습니다.\n\n mbti를 맞춘 결과를 실제 mbti와 비교하는 결과 페이지를 구현했습니다."
+    },
+    {
+      "title": "KT AI Voice Studio",
+      "link": "https://aivoicestudio.ai/",
+      "date": "2023.05 - 2023.11",
+      "summary": "음성 합성 AI를 통해 다양한 콘텐츠를 제작할 수 있는 플랫폼",
+      "github": "",
+      "explanation": "사용자가 업로드한 파일이 slate.js 에디터상에 렌더링되는 기능을 구현했습니다.\n이 과정에서 파일 형식이 .epub, .txt, .xlsx인 경우에 대한 데이터 파싱 작업을 수행하였습니다.\n\nAI보이스 스튜디오 이벤트 페이지를 관리자가 직접 조작하고 실시간으로 반영할 수 있는 에디터 페이지를 구현했습니다."
+    },
+    {
+      "title": "빌리지(BilliG)",
+      "link": "https://billig-front.vercel.app/",
+      "date": "2022.12 - 2022.12",
+      "summary": "사용자 간의 자유로운 물품 대여가 가능한 물품 대여 플랫폼",
+      "github": "https://github.com/BilliG-14/BilliG-FRONT",
+      "explanation": "6명의 팀원이 3주간 프로젝트를 진행했습니다.\n자유 물품 대여 플랫폼을 완성하고 프로젝트 발표 이후 리팩토링 완료했습니다.\n매일 스크럼 진행 후 회의록 작성하고 진행 내용 공유하였습니다.\n\n\nSocket.io를 이용하여 1대1 프라이빗룸 실시간 채팅 기능 구현했습니다."
+    },
+    {
+      "title": "개굿(GAEGOOD)",
+      "link": "https://gaegood.com/",
+      "date": "2022.11 - 2022.11",
+      "summary": "개발자들에게 개발자 굿즈를 판매하는 쇼핑몰",
+      "github": "https://github.com/GaeGood/GAEGOOD",
+      "explanation": "5명이 2주간 프로젝트 진행하여 개발자 굿즈 쇼핑몰을 완성했습니다.\n매일 스크럼 진행 후 회의록 작성하고 진행 내용 공유하였으며\n도입할 기술과 방식에 대한 기획과 논의에 일정의 30% 이상 투자했습니다.\n쇼핑몰 장바구니를 서버DB가 아닌 프론트 단에서 관리해야 한다는 구현 요구 사항이 있었습니다.\nIndexedDB로 장바구니 data를 저장하고 체크 박스로 상품을 선택, 삭제할 수 있도록 구현했습니다."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "skills": [
+    {
+      "title": "mbtiDetective",
+      "Front-End": "TypeScript, React, Styled-Component, Zustand",
+      "Back-End": "Next.js, Supabase",
+      "Database": "PostgreSQL",
+      "Deployment": "Netlify"
+    },
+    {
+      "title": "aiVoiceStudio",
+      "Front-End": "TypeScript React Recoil React-Query Next.js SWR Emotion Styled-Components",
+      "Back-End": "",
+      "Database": "",
+      "Deployment": ""
+    },
+    {
+      "title": "billiG",
+      "Front-End": "TypeScript React React-Query Zustand TailwindCSS Axios Socket.io",
+      "Back-End": "Node.js Nest.js Socket.io Mongoose",
+      "Database": "MongoDB",
+      "Deployment": "Vercel NginX PM2"
+    },
+    {
+      "title": "gaegood",
+      "Front-End": "HTML5, CSS3, JavaScript, Bootstrap",
+      "Back-End": "Node.js, Express.js",
+      "Database": "MongoDB",
+      "Deployment": "NginX, PM2"
+    }
+  ]
+}
