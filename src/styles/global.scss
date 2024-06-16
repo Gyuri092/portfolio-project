@@ -18,6 +18,40 @@
 
 .darkmode {
   background-color: $charcoalGray;
+  div {
+    color: $white;
+    border-color: $white;
+  }
+  p {
+    color: $white;
+  }
+  a {
+    color: $white;
+  }
+  button {
+    color: $white;
+  }
+  li {
+    color: $white;
+  }
+  .page-title {
+    border-color: $pastelLilac;
+    color: $pastelLilac;
+  }
+  .subtitle {
+    color: $pastelLilac;
+  }
+  .howiworkpage-container {
+    p:nth-of-type(1) {
+      color: $pastelLilac;
+    }
+  }
+  .projects-page-title {
+    color: $pastelLilac;
+  }
+  .experience-page-title {
+    color: $pastelLilac;
+  }
 }
 
 .lightmode {
