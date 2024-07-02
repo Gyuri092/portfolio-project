@@ -69,8 +69,10 @@ export const Modal = () => {
             <p className="modal-contents-summary">{selectedProject?.summary}</p>
             {selectedProject?.github && (
               <div className="modal-github-link-container">
-                <p>Github : </p>
-                <GithubIcon />
+                <div className="github-icon-container">
+                  <p>Github</p>
+                  <GithubIcon />
+                </div>
                 <a
                   href={selectedProject?.github}
                   target="_blank"
