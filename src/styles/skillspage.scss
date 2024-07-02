@@ -1,11 +1,11 @@
 @use 'colors' as *;
 
 
-@mixin page-contents($height:50%) {
+@mixin page-contents($height) {
   height: $height;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   line-height: 1.7;
   animation: fadein 2s;
   @keyframes fadein {
@@ -21,6 +21,7 @@
 .skills-page-contents {
   @include page-contents(60%);
   width: 560px;
+  box-sizing: border-box;
 }
 
 @mixin contents {
