@@ -81,6 +81,10 @@ p {
     transition: all 0.2s ease;
     color: $lightSilver;
   }
+  svg {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .modal-skills-list {

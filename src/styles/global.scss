@@ -2,6 +2,8 @@
 
 @use 'colors' as *;
 
+@import './mixin';
+
 .rootpage {
   padding: 30px 30px;
   width: 100%;
@@ -60,7 +62,8 @@
 
 .page-container {
   width: 100%;
-  height: 100%;
+  height: auto;
+  min-height: 100%;
   padding-bottom: 30px;
   display: flex;
   justify-content: center;
@@ -111,3 +114,494 @@
   color: $charcoalGray;
   font-size: 24px;
 }
+
+@include mobile {
+  .page-container {
+    background-color: yellow;
+  }
+}
+
+@include mobile-to-tablet {
+  .page-container {
+    background-color: yellowgreen;
+  }
+}
+
+@include tablet {
+  .page-container {
+    background-color: green;
+  }
+}
+
+@include tablet-to-laptop {
+  .mainpage {
+    .mainpage-text {
+      font-size: 50px;
+    }
+  }
+  .header-container {
+    .title {
+      font-size: 40px;
+    }
+    .icon-container {
+      width: 160px;
+      svg {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+  .page-container {
+    height: auto;
+    min-height: 100%;
+    .page-title {
+      width: 200px;
+      height: 200px;
+      font-size: 44px;
+    }
+    .subtitle {
+      font-size: 24px;
+    }
+    .contents {
+      font-size: 20px;
+    }
+    .skills-page-contents {
+      .skills-page-list-contents {
+        font-size: 20px;
+      }
+    }
+  }
+  .projects-page-container {
+    .projects-page-title {
+      width: 80%;
+      font-size: 44px;
+    }
+    .projects-page-button-container {
+      width: 80%;
+      margin-bottom: 20px;
+      svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    .carousel-container {
+      width: 80%;
+      height: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .carousel-image-title {
+        font-size: 40px;
+      }
+      .carousel-image {
+        width: 80%;
+        height: 80%;
+      }
+    }
+    .thumnaillist-container {
+      width: 80%;
+    }
+  }
+  .modal-background {
+    .modal-container {
+      width: 80%;
+      padding: 60px 40px;
+      font-size: 14px;
+      .modal-contents-title {
+        font-size: 24px;
+      }
+      .modal-contents-date {
+        font-size: 14px;
+      }
+      .modal-contents-summary {
+        font-size: 16px;
+      }
+      .modal-github-link-container {
+        font-size: 12px;
+        svg {
+          width: 30px;
+          height: 30px;
+        }
+      }
+      .modal-carousel-container {
+        height: 90%;
+      }
+    }
+  }
+  .experience-page-container {
+    .experience-page-title {
+      width: 80%;
+      font-size: 44px;
+    }
+    .experience-page-subtitle {
+      font-size: 30px;
+    }
+    .experience-page-middle-container {
+      width: 80%;
+    }
+    .chevron-button-container {
+      padding: 0;
+    }
+    .experience-page-image-box {
+      width: 60%;
+      img {
+        width: 90%;
+      }
+    }
+    .experience-page-text {
+      width: 40%;
+      font-size: 18px;
+    }
+  }
+  .howiworkpage-container {
+    p {
+      font-size: 24px;
+    }
+    .howiworkpage-title {
+      font-size: 44px;
+    }
+  }
+}
+
+@include laptop {
+  .mainpage {
+    .mainpage-text {
+      font-size: 50px;
+    }
+  }
+  .header-container {
+    .title {
+      font-size: 40px;
+    }
+    .icon-container {
+      width: 160px;
+      svg {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+  .page-container {
+    height: auto;
+    min-height: 100%;
+    .page-title {
+      width: 200px;
+      height: 200px;
+      font-size: 44px;
+    }
+    .subtitle {
+      font-size: 24px;
+    }
+    .contents {
+      font-size: 20px;
+    }
+    .skills-page-contents {
+      .skills-page-list-contents {
+        font-size: 20px;
+      }
+    }
+  }
+  .projects-page-container {
+    .projects-page-title {
+      width: 80%;
+      font-size: 44px;
+    }
+    .projects-page-button-container {
+      width: 80%;
+      margin-bottom: 20px;
+      svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    .carousel-container {
+      width: 80%;
+      height: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .carousel-image-title {
+        font-size: 40px;
+      }
+      .carousel-image {
+        width: 80%;
+        height: 80%;
+      }
+    }
+    .thumnaillist-container {
+      width: 80%;
+    }
+  }
+  .modal-background {
+    .modal-container {
+      width: 80%;
+      padding: 60px 40px;
+      font-size: 14px;
+      .modal-contents-title {
+        font-size: 24px;
+      }
+      .modal-contents-date {
+        font-size: 14px;
+      }
+      .modal-contents-summary {
+        font-size: 16px;
+      }
+      .modal-github-link-container {
+        font-size: 12px;
+        svg {
+          width: 30px;
+          height: 30px;
+        }
+      }
+      .modal-carousel-container {
+        height: 90%;
+      }
+    }
+  }
+  .experience-page-container {
+    .experience-page-title {
+      width: 80%;
+      font-size: 44px;
+    }
+    .experience-page-subtitle {
+      font-size: 30px;
+    }
+    .experience-page-middle-container {
+      width: 80%;
+    }
+    .chevron-button-container {
+      padding: 0;
+    }
+    .experience-page-image-box {
+      width: 60%;
+      img {
+        width: 90%;
+      }
+    }
+    .experience-page-text {
+      width: 40%;
+      font-size: 18px;
+    }
+  }
+  .howiworkpage-container {
+    p {
+      font-size: 24px;
+    }
+    .howiworkpage-title {
+      font-size: 44px;
+    }
+  }
+}
+
+@include landscape-600to800 {
+  .mainpage {
+    .mainpage-text {
+      font-size: 44px;
+    }
+    p::after {
+      height: 58px;
+    }
+  }
+  .page-container {
+    .contents {
+      font-size: 18px;
+    }
+    .skills-page-contents {
+      .subtitle {
+        font-size: 20px;
+      }
+      .skills-page-list-contents {
+        font-size: 14px;
+      }
+      .contents-detail {
+        font-size: 12px;
+      }
+    }
+    .contact-page-subtitle {
+      font-size: 20px;
+    }
+    .contact-page-contents {
+      font-size: 16px;
+    }
+  }
+  
+  .projects-page-container {
+    .projects-page-title {
+      font-size: 40px;
+    }
+    .projects-page-button-container {
+      margin-bottom: 0;
+    }
+    .carousel-container {
+      width: 80%;
+      height: 100%;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .carousel-image-title {
+        font-size: 30px;
+      }
+    }
+    .thumnaillist-container {
+      width: 80%;
+      overflow-y: scroll;
+    }
+  }
+  .modal-background {
+    .modal-container {
+      width: 70%;
+      height: 80%;
+      overflow-y: scroll;
+      padding: 60px 40px;
+      font-size: 14px;
+      .modal-contents-title {
+        font-size: 24px;
+      }
+      .modal-contents-date {
+        font-size: 14px;
+      }
+      .modal-contents-summary {
+        font-size: 16px;
+      }
+      .modal-github-link-container {
+        font-size: 11px;
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+      .modal-carousel-container {
+        height: 100%;
+      }
+    }
+  }
+  .howiworkpage-container {
+    p {
+      font-size: 20px;
+    }
+    .howiworkpage-title {
+      font-size: 40px;
+    }
+  }
+  .experience-page-container {
+    .experience-page-title {
+      width: 80%;
+      font-size: 40px;
+    }
+    .experience-page-subtitle {
+      font-size: 24px;
+    }
+    .experience-page-image-box {
+      img {
+        height: 60%;
+      }
+    }
+    .experience-page-text {
+      width: 40%;
+      font-size: 14px;
+    }
+  }
+}
+
+@include landscape-800to1130 {
+  .mainpage {
+    .mainpage-text {
+      font-size: 44px;
+    }
+    p::after {
+      height: 58px;
+    }
+  }
+  .page-container {
+    .contents {
+      font-size: 18px;
+    }
+    .skills-page-contents {
+      .subtitle {
+        font-size: 20px;
+      }
+      .skills-page-list-contents {
+        font-size: 14px;
+      }
+      .contents-detail {
+        font-size: 12px;
+      }
+    }
+    .contact-page-subtitle {
+      font-size: 20px;
+    }
+    .contact-page-contents {
+      font-size: 16px;
+    }
+  }
+  
+  .projects-page-container {
+    .projects-page-title {
+      font-size: 40px;
+    }
+    .projects-page-button-container {
+      margin-bottom: 20px;
+    }
+    .carousel-container {
+      width: 80%;
+      height: 70%;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .carousel-image-title {
+        font-size: 30px;
+        margin-top: 10px;
+      }
+      .circle-index-button-container {
+        height: 60px;
+        align-items: center;
+      }
+    }
+    .thumnaillist-container {
+      width: 80%;
+      overflow-y: scroll;
+      .thumnaillist-image-container {
+        img{
+          height: 90%;
+        }
+      }
+    }
+  }
+  .howiworkpage-container {
+    p {
+      font-size: 20px;
+    }
+    .howiworkpage-title {
+      font-size: 40px;
+    }
+  }
+  .experience-page-container {
+    .experience-page-title {
+      width: 80%;
+      font-size: 40px;
+    }
+    .experience-page-subtitle {
+      font-size: 30px;
+    }
+    .experience-page-image-box {
+      img {
+        height: 60%;
+      }
+    }
+    .experience-page-text {
+      width: 40%;
+      font-size: 16px;
+    }
+  }
+}
+// @include laptop-to-desktop {
+//   .page-container {
+//   }
+// }
+
+// @include desktop {
+//   .page-container {
+//   }
+// }
