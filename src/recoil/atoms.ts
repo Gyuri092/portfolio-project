@@ -20,12 +20,18 @@ const currentCarouselIndexState = atom({
   default: 0,
 });
 
+const carouselTransitionState = atom({
+  key: 'carouselTransitionState',
+  default: '',
+});
+
 const stopIntervalState = atom({
   key: 'stopIntervalState',
   default: false,
 });
 
 export {
+  carouselTransitionState,
   currentCarouselIndexState,
   currentIndexState,
   darkModeState,

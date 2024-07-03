@@ -25,7 +25,7 @@ export const Carousel = () => {
   return (
     <div className={`carousel-container ${backgroundColors[currentIndex]}`}>
       <ChevronButtons
-        imageData={imageData}
+        imageSrcArray={imageSrcArray}
         backgroundColors={backgroundColors}
       />
       <CarouselImageContainer

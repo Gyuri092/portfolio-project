@@ -2,26 +2,52 @@ import ChevronLeftIcon from '@/icons/chevronLeft.svg';
 import ChevronLeftGrayIcon from '@/icons/chevronLeftGray.svg';
 import ChevronRightIcon from '@/icons/chevronRight.svg';
 import ChevronRightGrayIcon from '@/icons/chevronRightGray.svg';
-import { currentIndexState } from '@/recoil/atoms';
+import { carouselTransitionState, currentIndexState } from '@/recoil/atoms';
+import { useCallback } from 'react';
 import { useRecoilState } from 'recoil';
 
 interface Props {
-  imageData: string[];
+  imageSrcArray: string[];
   backgroundColors: string[];
 }
 
 export const ChevronButtons = (props: Props) => {
-  const { imageData, backgroundColors } = props;
+  const { imageSrcArray, backgroundColors } = props;
   const [currentIndex, setCurrentIndex] = useRecoilState(currentIndexState);
+  const [, setCarouselTransition] = useRecoilState(carouselTransitionState);
+
+  const resetIndexAndTransition = useCallback(
+    (newIndex: number, transition: string) => {
+      setTimeout(() => {
+        setCurrentIndex(newIndex);
+        setCarouselTransition(transition);
+      }, 10);
+    },
+    [setCarouselTransition, setCurrentIndex],
+  );
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % imageData.length);
+    if (currentIndex === imageSrcArray.length - 1) {
+      resetIndexAndTransition(0, 'none');
+    } else {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % imageSrcArray.length);
+    }
   };
 
   const prevSlide = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + imageData.length) % imageData.length,
-    );
+    if (currentIndex === 0) {
+      setCarouselTransition('none');
+      setCurrentIndex(imageSrcArray.length - 1);
+      resetIndexAndTransition(
+        imageSrcArray.length - 2,
+        'transform 0.5s ease-in-out',
+      );
+    } else {
+      setCurrentIndex(
+        (prevIndex) =>
+          (prevIndex - 1 + imageSrcArray.length) % imageSrcArray.length,
+      );
+    }
   };
 
   return (

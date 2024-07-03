@@ -1,11 +1,12 @@
 import {
-    currentCarouselIndexState,
-    currentIndexState,
-    showModalState,
-    stopIntervalState,
+  carouselTransitionState,
+  currentCarouselIndexState,
+  currentIndexState,
+  showModalState,
+  stopIntervalState,
 } from '@/recoil/atoms';
 import Image from 'next/image';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 import { useRecoilState } from 'recoil';
 
 interface Props {
@@ -15,9 +16,11 @@ interface Props {
 
 export const CarouselImageContainer = (props: Props) => {
   const { imageSrcArray, backgroundColors } = props;
-  const [carouselTransition, setCarouselTransition] = useState('');
   const [, setShowModal] = useRecoilState(showModalState);
   const [currentIndex, setCurrentIndex] = useRecoilState(currentIndexState);
+  const [carouselTransition, setCarouselTransition] = useRecoilState(
+    carouselTransitionState,
+  );
   const [, setCurrentCarouselIndex] = useRecoilState(currentCarouselIndexState);
   const [stopInterval, setStopInterval] = useRecoilState(stopIntervalState);
 
@@ -30,7 +33,7 @@ export const CarouselImageContainer = (props: Props) => {
       setCurrentIndex(0);
       setCarouselTransition('none');
     }, 10);
-  }, [setCurrentIndex]);
+  }, [setCarouselTransition, setCurrentIndex]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -50,6 +53,7 @@ export const CarouselImageContainer = (props: Props) => {
     currentIndex,
     imageSrcArray.length,
     resetIndexAndTransition,
+    setCarouselTransition,
     setCurrentIndex,
     stopInterval,
   ]);
