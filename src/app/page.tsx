@@ -10,18 +10,22 @@ import { ProfilePage } from '@/components/ProfilePage/ProfilePage';
 import { ProjectsPage } from '@/components/ProjectsPage/ProjectsPage';
 import { SkillsPage } from '@/components/SkillsPage/SkillsPage';
 import { darkModeState, showModalState } from '@/recoil/atoms';
+import { useRef } from 'react';
 import { createPortal } from 'react-dom';
-import { FullScreen, useFullScreenHandle } from 'react-full-screen';
 import { useRecoilValue } from 'recoil';
 
 export const Page = () => {
   const darkMode = useRecoilValue(darkModeState);
   const showModal = useRecoilValue(showModalState);
-  const handle = useFullScreenHandle();
+  const containerRef = useRef<HTMLDivElement>(null);
+
   return (
-    <div className={`${darkMode ? 'darkmode' : 'lightmode'} rootpage`}>
-      <FullScreen className="fullscreen-container" handle={handle}>
-        <Header handle={handle} />
+    <div
+      className={`${darkMode ? 'darkmode' : 'lightmode'} rootpage`}
+      ref={containerRef}
+    >
+      <div className="wrapper">
+        <Header containerRef={containerRef} />
         <MainPage />
         <ProfilePage />
         <SkillsPage />
@@ -30,7 +34,7 @@ export const Page = () => {
         <ExperiencePage />
         <HowIWorkPage />
         <ContactPage />
-      </FullScreen>
+      </div>
     </div>
   );
 };

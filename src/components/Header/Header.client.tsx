@@ -6,14 +6,16 @@ import ZoomOutScreenIcon from '@/icons/zoomOutScreen.svg';
 import ZoomOutScreenIconInDarkMode from '@/icons/zoomOutScreenDarkMode.svg';
 import { darkModeState } from '@/recoil/atoms';
 import '@/styles/header.scss';
-import { useState } from 'react';
-import { FullScreenHandle } from 'react-full-screen';
+import { RefObject, useState } from 'react';
 import { useRecoilState } from 'recoil';
 
-export const Header = (props: { handle: FullScreenHandle }) => {
+export const Header = ({
+  containerRef,
+}: {
+  containerRef: RefObject<HTMLDivElement>;
+}) => {
   const [darkMode, setDarkMode] = useRecoilState(darkModeState);
   const [isFullScreen, setIsFullScreen] = useState(true);
-  const { handle } = props;
   const fullScreenIcon = darkMode ? (
     <FullScreenIconInDarkMode />
   ) : (
@@ -24,6 +26,18 @@ export const Header = (props: { handle: FullScreenHandle }) => {
   ) : (
     <ZoomOutScreenIcon />
   );
+
+  const toggleFullScreen = () => {
+    if (!containerRef || !containerRef.current) return;
+    if (!document.fullscreenElement) {
+      if (containerRef.current.requestFullscreen) {
+        containerRef.current.requestFullscreen();
+      }
+    } else {
+      document.exitFullscreen();
+    }
+  };
+
   return (
     <div className={`${darkMode ? 'darkmode' : 'lightmode'} header-container`}>
       <div className={`${darkMode ? 'darkmode' : 'lightmode'} title`}>
@@ -42,7 +56,7 @@ export const Header = (props: { handle: FullScreenHandle }) => {
           className="icon"
           onClick={() => {
             setIsFullScreen((prev) => !prev);
-            return isFullScreen ? handle.enter() : handle.exit();
+            toggleFullScreen();
           }}
         >
           {isFullScreen ? fullScreenIcon : zoomOutScreenIcon}
