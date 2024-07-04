@@ -2,7 +2,7 @@
 
 // mobile: 최소 mobile ~ 최대 mobile-to-tablet
 @mixin mobile {
-    @media (min-width: #{$mobile}) and (max-width: #{$mobile-to-tablet - 1px}) {
+    @media (max-width: #{$mobile-to-tablet - 1px}) {
       @content;  
     }
 }
