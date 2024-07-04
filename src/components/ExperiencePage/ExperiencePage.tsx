@@ -10,7 +10,7 @@ import { useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import contentsJson from './data/contents.json';
 
-export const ExperiencePage = () => {
+export default function ExperiencePage() {
   const contentsArray: ExperienceObjectType[] = contentsJson.array;
   const [currentIndex, setCurrentIndex] = useState(0);
   const darkMode = useRecoilValue(darkModeState);
@@ -86,4 +86,4 @@ export const ExperiencePage = () => {
       </div>
     </div>
   );
-};
+}

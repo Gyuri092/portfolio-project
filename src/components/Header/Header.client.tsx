@@ -9,11 +9,11 @@ import '@/styles/header.scss';
 import { RefObject, useState } from 'react';
 import { useRecoilState } from 'recoil';
 
-export const Header = ({
+export default function Header({
   containerRef,
 }: {
   containerRef: RefObject<HTMLDivElement>;
-}) => {
+}) {
   const [darkMode, setDarkMode] = useRecoilState(darkModeState);
   const [isFullScreen, setIsFullScreen] = useState(true);
   const fullScreenIcon = darkMode ? (
@@ -64,4 +64,4 @@ export const Header = ({
       </div>
     </div>
   );
-};
+}

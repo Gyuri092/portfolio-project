@@ -6,10 +6,10 @@ import { darkModeState, stopIntervalState } from '@/recoil/atoms';
 import '@/styles/projectspage.scss';
 import { useState } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { Carousel } from './Carousel/Carousel';
-import { MediumThumnailList } from './MediumThumnailList/MediumThumnailList';
+import Carousel from './Carousel/Carousel';
+import MediumThumnailList from './MediumThumnailList/MediumThumnailList';
 
-export const ProjectsPage = () => {
+export default function ProjectsPage() {
   const [viewCarousel, setViewCarousel] = useState(true);
   const darkMode = useRecoilValue(darkModeState);
   const [, setStopInterval] = useRecoilState(stopIntervalState);
@@ -39,4 +39,4 @@ export const ProjectsPage = () => {
       {viewCarousel ? <Carousel /> : <MediumThumnailList />}
     </div>
   );
-};
+}

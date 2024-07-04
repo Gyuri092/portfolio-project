@@ -2,9 +2,9 @@ import { currentIndexState } from '@/recoil/atoms';
 import '@/styles/carousel.scss';
 import { useMemo } from 'react';
 import { useRecoilValue } from 'recoil';
-import { CarouselImageContainer } from './CarouselImageContainer/CarouselImageContainer';
-import { ChevronButtons } from './ChevronButtons/ChevronButtons';
-import { CircleButtons } from './CircleButtons/CircleButtons';
+import CarouselImageContainer from './CarouselImageContainer/CarouselImageContainer';
+import ChevronButtons from './ChevronButtons/ChevronButtons';
+import CircleButtons from './CircleButtons/CircleButtons';
 import imageDataJson from './data/imageData.json';
 
 const backgroundColors = [
@@ -15,7 +15,7 @@ const backgroundColors = [
   'mbtiDetectiveBg',
 ];
 
-export const Carousel = () => {
+export default function Carousel() {
   const imageData = imageDataJson.array;
   const currentIndex = useRecoilValue(currentIndexState);
   const imageSrcArray = useMemo(() => {
@@ -38,4 +38,4 @@ export const Carousel = () => {
       />
     </div>
   );
-};
+}

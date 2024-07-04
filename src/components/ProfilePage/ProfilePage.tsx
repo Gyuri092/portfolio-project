@@ -1,6 +1,6 @@
 import profileDataJson from './data/profileData.json';
 
-export const ProfilePage = () => {
+export default function ProfilePage() {
   const profileData = profileDataJson;
   return (
     <div className="page-container">
@@ -21,4 +21,4 @@ export const ProfilePage = () => {
       </div>
     </div>
   );
-};
+}

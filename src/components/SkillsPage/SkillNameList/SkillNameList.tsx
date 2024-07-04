@@ -13,7 +13,7 @@ const exceptionSkills = [
   'Oracle, MS-SQL',
 ];
 
-export const SkillNameList = (props: Props) => {
+export default function SkillNameList(props: Props) {
   const [clickedSkill, setClickedSkill] = useState('');
   const { skillName, keyName } = props;
 
@@ -95,4 +95,4 @@ export const SkillNameList = (props: Props) => {
       {skillDetail}
     </li>
   );
-};
+}

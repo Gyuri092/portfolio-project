@@ -3,7 +3,7 @@ import '@/styles/mainpage.scss';
 import { useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 
-export const MainPage = () => {
+export default function MainPage() {
   const darkMode = useRecoilValue(darkModeState);
   const [word, setWord] = useState('');
   const [count, setCount] = useState(0);
@@ -36,4 +36,4 @@ export const MainPage = () => {
       <p className="mainpage-text"> {word}</p>
     </div>
   );
-};
+}

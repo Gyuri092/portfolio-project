@@ -1,17 +1,17 @@
 import '@/styles/global.scss';
-import type { Metadata } from 'next';
-import { RecoilRootWrapper } from './RecoilRootWrapper';
+import RecoilRootWrapper from './RecoilRootWrapper';
+// import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'Gyuri-Portpolio',
-  description: 'This is Gyuri’s portfolio website.',
-};
+// export const metadata: Metadata = {
+//   title: 'Gyuri-Portpolio',
+//   description: 'This is Gyuri’s portfolio website.',
+// };
 
-export const RootLayout = ({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) => {
+}>) {
   return (
     <html lang="ko">
       <body>
@@ -19,6 +19,4 @@ export const RootLayout = ({
       </body>
     </html>
   );
-};
-
-export default RootLayout;
+}

@@ -14,7 +14,7 @@ interface Props {
   backgroundColors: string[];
 }
 
-export const CarouselImageContainer = (props: Props) => {
+export default function CarouselImageContainer(props: Props) {
   const { imageSrcArray, backgroundColors } = props;
   const [, setShowModal] = useRecoilState(showModalState);
   const [currentIndex, setCurrentIndex] = useRecoilState(currentIndexState);
@@ -98,4 +98,4 @@ export const CarouselImageContainer = (props: Props) => {
       })}
     </div>
   );
-};
+}

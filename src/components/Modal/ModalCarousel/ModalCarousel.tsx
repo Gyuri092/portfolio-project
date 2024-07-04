@@ -5,7 +5,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import modalCarouselImageJson from './data/modalCarouselImage.json';
 
-export const ModalCarousel = () => {
+export default function ModalCarousel() {
   const imageJsonArray = modalCarouselImageJson.images;
   const currentCarouselIndex = useRecoilValue(currentCarouselIndexState);
   const [carouselIndex, setCarouselIndex] = useState(0);
@@ -73,4 +73,4 @@ export const ModalCarousel = () => {
       </div>
     </div>
   );
-};
+}

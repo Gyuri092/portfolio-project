@@ -11,7 +11,7 @@ interface Props {
   backgroundColors: string[];
 }
 
-export const ChevronButtons = (props: Props) => {
+export default function ChevronButtons(props: Props) {
   const { imageSrcArray, backgroundColors } = props;
   const [currentIndex, setCurrentIndex] = useRecoilState(currentIndexState);
   const [, setCarouselTransition] = useRecoilState(carouselTransitionState);
@@ -68,4 +68,4 @@ export const ChevronButtons = (props: Props) => {
       </button>
     </div>
   );
-};
+}

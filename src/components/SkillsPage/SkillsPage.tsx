@@ -1,7 +1,7 @@
 import '@/styles/skillspage.scss';
-import { SkillNameList } from './SkillNameList/SkillNameList';
+import SkillNameList from './SkillNameList/SkillNameList';
 
-export const SkillsPage = () => {
+export default function SkillsPage() {
   const skillsOject = {
     'Front-End':
       'HTML, CSS\nJavaScript, TypeScript\nReact, Next.js\nRedux, Recoil, Zustand\nReact-query, SWR\nTailwindCSS, Styled-Components, Emotion',
@@ -32,4 +32,4 @@ export const SkillsPage = () => {
       </div>
     </div>
   );
-};
+}

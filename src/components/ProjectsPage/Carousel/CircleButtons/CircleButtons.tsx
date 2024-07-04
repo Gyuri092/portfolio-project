@@ -6,7 +6,7 @@ interface Props {
   backgroundColors: string[];
 }
 
-export const CircleButtons = (props: Props) => {
+export default function CircleButtons(props: Props) {
   const [currentIndex, setCurrentIndex] = useRecoilState(currentIndexState);
   const { imageSrcArray, backgroundColors } = props;
   const getButtonClassName = (index: number) => {
@@ -36,4 +36,4 @@ export const CircleButtons = (props: Props) => {
       })}
     </div>
   );
-};
+}

@@ -36,6 +36,5 @@ export {
   currentIndexState,
   darkModeState,
   showModalState,
-  stopIntervalState
+  stopIntervalState,
 };
-

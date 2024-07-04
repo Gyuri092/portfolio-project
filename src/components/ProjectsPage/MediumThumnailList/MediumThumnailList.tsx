@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useRecoilState } from 'recoil';
 import imageDataJson from './data/imageData.json';
 
-export const MediumThumnailList = () => {
+export default function MediumThumnailList() {
   const imageDataArray = imageDataJson.array;
   const [, setShowModal] = useRecoilState(showModalState);
   const [, setCurrentCarouselIndex] = useRecoilState(currentCarouselIndexState);
@@ -24,4 +24,4 @@ export const MediumThumnailList = () => {
       ))}
     </div>
   );
-};
+}

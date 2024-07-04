@@ -8,7 +8,7 @@ import { darkModeState } from '@/recoil/atoms';
 import '@/styles/contactpage.scss';
 import { useRecoilValue } from 'recoil';
 
-export const ContactPage = () => {
+export default function ContactPage() {
   const darkMode = useRecoilValue(darkModeState);
 
   const emailIcon = darkMode ? <EmailIconInDarkMode /> : <EmailIcon />;
@@ -53,4 +53,4 @@ export const ContactPage = () => {
       </div>
     </div>
   );
-};
+}

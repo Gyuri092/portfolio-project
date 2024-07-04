@@ -1,6 +1,6 @@
 import '@/styles/howiworkpage.scss';
 
-export const HowIWorkPage = () => {
+export default function HowIWorkPage() {
   return (
     <div className="howiworkpage-container">
       <p className="howiworkpage-title">How I Work</p>
@@ -12,4 +12,4 @@ export const HowIWorkPage = () => {
       </p>
     </div>
   );
-};
+}

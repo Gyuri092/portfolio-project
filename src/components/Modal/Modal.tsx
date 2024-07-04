@@ -9,11 +9,11 @@ import '@/styles/modal.scss';
 import { SkillListObjectType } from '@/types/types';
 import { useMemo } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { ModalCarousel } from './ModalCarousel/ModalCarousel';
 import projectDetailJson from './data/projectContentsDetail.json';
 import skillListJson from './data/skillList.json';
+import ModalCarousel from './ModalCarousel/ModalCarousel';
 
-export const Modal = () => {
+export default function Modal() {
   const skillListArray: SkillListObjectType[] = skillListJson.skills;
   const projectDetailArray = projectDetailJson.contents;
 
@@ -113,4 +113,4 @@ export const Modal = () => {
       </div>
     </div>
   );
-};
+}
