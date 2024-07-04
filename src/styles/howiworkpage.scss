@@ -11,7 +11,6 @@
   font-size: 26px;
   white-space: pre-line;
   text-align: center;
-  line-height: 3;
 }
 
 .howiworkpage-title {
@@ -19,4 +18,8 @@
   font-weight: 600;
   color: $royalPurple;
   margin-bottom: 20px;
+}
+
+.howiworkpage-contents {
+  line-height: 3;
 }

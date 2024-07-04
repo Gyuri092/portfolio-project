@@ -90,11 +90,11 @@
       }
     }
     .howiworkpage-container {
-      p {
-        font-size: 20px;
-      }
       .howiworkpage-title {
         font-size: 40px;
+      } 
+      .howiworkpage-contents {
+        font-size: 20px;
       }
     }
     .experience-page-container {
@@ -183,11 +183,11 @@
       }
     }
     .howiworkpage-container {
-      p {
-        font-size: 20px;
-      }
       .howiworkpage-title {
         font-size: 40px;
+      }
+      .howiworkpage-contents {
+        font-size: 20px;
       }
     }
     .experience-page-container {
@@ -418,8 +418,9 @@
       }
     }
     .howiworkpage-container {
-      p {
+      .howiworkpage-contents {
         font-size: 10px;
+        line-height: 2;
       }
       .howiworkpage-title {
         font-size: 20px;
@@ -614,11 +615,12 @@
       }
     }
     .howiworkpage-container {
-      p {
-        font-size: 14px;
-      }
       .howiworkpage-title {
         font-size: 30px;
+      } 
+      .howiworkpage-contents {
+        font-size: 14px;
+        line-height: 2;
       }
     }
   }
@@ -774,11 +776,11 @@
       }
     }
     .howiworkpage-container {
-      p {
-        font-size: 18px;
-      }
       .howiworkpage-title {
         font-size: 40px;
+      }
+      .howiworkpage-contents {
+        font-size: 18px;
       }
     }
   }
@@ -907,11 +909,11 @@
       }
     }
     .howiworkpage-container {
-      p {
-        font-size: 24px;
-      }
       .howiworkpage-title {
         font-size: 44px;
+      }
+      .howiworkpage-contents {
+        font-size: 24px;
       }
     }
   }
@@ -1040,11 +1042,11 @@
       }
     }
     .howiworkpage-container {
-      p {
-        font-size: 24px;
-      }
       .howiworkpage-title {
         font-size: 44px;
+      }
+      .howiworkpage-contents {
+        font-size: 24px;
       }
     }
   }
