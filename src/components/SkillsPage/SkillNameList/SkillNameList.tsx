@@ -7,15 +7,15 @@ interface Props {
   keyName: string;
 }
 
+const exceptionSkills = [
+  'HTML, CSS',
+  'JavaScript, TypeScript',
+  'Oracle, MS-SQL',
+];
+
 export const SkillNameList = (props: Props) => {
   const [clickedSkill, setClickedSkill] = useState('');
   const { skillName, keyName } = props;
-
-  const exceptionSkills = [
-    'HTML, CSS',
-    'JavaScript, TypeScript',
-    'Oracle, MS-SQL',
-  ];
 
   const detailText = useMemo(() => {
     return {

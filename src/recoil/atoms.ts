@@ -10,9 +10,19 @@ const showModalState = atom({
   default: false,
 });
 
+const currentIndexState = atom({
+  key: 'currentIndexState',
+  default: 0,
+});
+
 const currentCarouselIndexState = atom({
   key: 'currentCarouselIndexState',
   default: 0,
+});
+
+const carouselTransitionState = atom({
+  key: 'carouselTransitionState',
+  default: '',
 });
 
 const stopIntervalState = atom({
@@ -21,7 +31,9 @@ const stopIntervalState = atom({
 });
 
 export {
+  carouselTransitionState,
   currentCarouselIndexState,
+  currentIndexState,
   darkModeState,
   showModalState,
   stopIntervalState

@@ -24,6 +24,10 @@
 
 .contact-page-contents {
   @include page-contents(30%);
+  svg {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 @mixin subtitle($fontsize: 36px) {

@@ -3,7 +3,6 @@
 .projects-page-container {
   width: 100%;
   height: 100%;
-  padding-bottom: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,6 +27,10 @@
       opacity: 0.6;
       transition: opacity 0.3s ease-in-out;
     }
+  }
+  svg {
+    width: 60px;
+    height: 60px;
   }
 }
 

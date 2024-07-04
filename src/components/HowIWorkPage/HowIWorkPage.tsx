@@ -3,7 +3,7 @@ import '@/styles/howiworkpage.scss';
 export const HowIWorkPage = () => {
   return (
     <div className="howiworkpage-container">
-      <p>How I Work</p>
+      <p className="howiworkpage-title">How I Work</p>
       <p>
         {`문제에 맞닥뜨리면 명확하게 정의하고 해결하는 것을 좋아합니다.
         어려운 문제를 해결하는 과정에서 재미를 느낍니다.

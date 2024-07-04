@@ -23,7 +23,8 @@
 
 .mainpage-text::after {
   content: '';
-  display: block;
+  display: flex;
+  align-items: center;
   position: absolute;
   top: 0;
   right: -10px;

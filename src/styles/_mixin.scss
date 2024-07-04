@@ -1,0 +1,56 @@
+@import "./variable";
+
+// mobile: 최소 mobile ~ 최대 mobile-to-tablet
+@mixin mobile {
+    @media (max-width: #{$mobile-to-tablet - 1px}) {
+      @content;  
+    }
+}
+// mobile-to-tablet: 최소 mobile-to-tablet ~ 최대 tablet
+@mixin mobile-to-tablet {
+    @media (min-width: #{$mobile-to-tablet}) and (max-width: #{$tablet - 1px}) {
+      @content;  
+    }
+}
+// tablet: 최소 tablet ~ 최대 tablet-to-laptop
+@mixin tablet {
+    @media (min-width: #{$tablet}) and (max-width: #{$tablet-to-laptop - 1px}) {
+      @content;  
+    }
+}
+// tablet-to-laptop: 최소 tablet-to-laptop ~ 최대 laptop
+@mixin tablet-to-laptop {
+    @media (min-width: #{$tablet-to-laptop}) and (max-width: #{$laptop - 1px}) {
+      @content;  
+    }
+}
+// laptop: 최소 laptop ~ 최대 laptop-to-desktop
+@mixin laptop {
+    @media (min-width: #{$laptop}) and (max-width: #{$laptop-to-desktop - 1px}) {
+      @content;  
+    }
+}
+// laptop-to-desktop: 최소 laptop-to-desktop ~ 최대 desktop
+@mixin laptop-to-desktop {
+    @media (min-width: #{$laptop-to-desktop}) and (max-width: #{$desktop - 1px}) {
+      @content;  
+    }
+}
+// desktop: 최소 desktop
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+      @content;  
+    }
+}
+
+// 수평모드의 높이
+@mixin landscape-600to800 {
+  @media (min-height: #{$landscape-600}) and (max-height: #{$landscape-800 - 1}) {
+    @content; 
+  }
+}
+@mixin landscape-800to1130 {
+  @media (min-height: #{$landscape-800}) and (max-height: #{$landscape-1130 - 1}) {
+    @content; 
+  }
+}

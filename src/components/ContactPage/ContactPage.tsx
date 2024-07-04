@@ -1,9 +1,9 @@
 import EmailIcon from '@/icons/email.svg';
-import EmailIconInDarkMode from '@/icons/emailInDarkMode.svg';
+import EmailIconInDarkMode from '@/icons/emailPastelLilac.svg';
 import GithubIcon from '@/icons/github.svg';
-import GithubIconInDarkMode from '@/icons/githubInDarkMode.svg';
+import GithubIconInDarkMode from '@/icons/githubPastelLilac.svg';
 import VelogIcon from '@/icons/velog.svg';
-import VelogIconInDarkMode from '@/icons/velogInDarkMode.svg';
+import VelogIconInDarkMode from '@/icons/velogPastelLilac.svg';
 import { darkModeState } from '@/recoil/atoms';
 import '@/styles/contactpage.scss';
 import { useRecoilValue } from 'recoil';
