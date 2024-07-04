@@ -67,6 +67,9 @@ export const Modal = () => {
             </button>
             <p className="modal-contents-date">{selectedProject?.date}</p>
             <p className="modal-contents-summary">{selectedProject?.summary}</p>
+            {selectedProject?.note && (
+              <p className="modal-contents-note">{selectedProject.note}</p>
+            )}
             {selectedProject?.github && (
               <div className="modal-github-link-container">
                 <div className="github-icon-container">

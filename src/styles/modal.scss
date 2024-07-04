@@ -76,12 +76,17 @@ p {
   font-weight: 600;
 }
 
+.modal-contents-note {
+  color: $notice;
+  font-weight: 600;
+}
+
 .modal-github-link-container {
   display: flex;
   align-items: center;
   font-size: 16px;
   font-weight: 500;
-  :hover {
+  a:hover {
     transition: all 0.2s ease;
     color: $lightSilver;
   }
@@ -93,6 +98,7 @@ p {
 
 .github-icon-container {
   display: flex;
+  align-items: center;
 }
 
 .modal-skills-list {
