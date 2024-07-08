@@ -41,7 +41,9 @@ export default function Header({
   return (
     <div className={`${darkMode ? 'darkmode' : 'lightmode'} header-container`}>
       <div className={`${darkMode ? 'darkmode' : 'lightmode'} title`}>
-        gyuri-portfolio
+        <a href="https://portfolio-project-eight-sigma.vercel.app/">
+          gyuri-portfolio
+        </a>
       </div>
       <div className="icon-container">
         <button

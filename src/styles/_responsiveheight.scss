@@ -1,0 +1,212 @@
+@import './mixin';
+
+//-----------height 반응형--------------------------//
+
+// 1. 600px-799px
+@include height-600to800 {
+  .mainpage {
+    .mainpage-text {
+      font-size: 44px;
+    }
+    p::after {
+      height: 58px;
+    }
+  }
+  .page-container {
+    .contents {
+      font-size: 18px;
+    }
+    .skills-page-contents {
+      .subtitle {
+        font-size: 20px;
+      }
+      .skills-page-list-contents {
+        font-size: 14px;
+      }
+      .contents-detail {
+        font-size: 12px;
+      }
+    }
+    .contact-page-subtitle {
+      font-size: 20px;
+    }
+    .contact-page-contents {
+      font-size: 16px;
+    }
+  }
+
+  .projects-page-container {
+    .projects-page-title {
+      font-size: 40px;
+    }
+    .projects-page-button-container {
+      margin-bottom: 0;
+    }
+    .carousel-container {
+      width: 80%;
+      height: 100%;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .carousel-image-title {
+        font-size: 30px;
+      }
+    }
+    .thumnaillist-container {
+      width: 80%;
+      overflow-y: scroll;
+    }
+  }
+  .modal-background {
+    .modal-container {
+      width: 70%;
+      height: 80%;
+      overflow-y: scroll;
+      padding: 60px 40px;
+      font-size: 14px;
+      .modal-contents-title {
+        font-size: 24px;
+      }
+      .modal-contents-date {
+        font-size: 14px;
+      }
+      .modal-contents-summary {
+        font-size: 16px;
+      }
+      .modal-github-link-container {
+        font-size: 11px;
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+      .modal-carousel-container {
+        height: 100%;
+        img {
+          height: 100%;
+        }
+      }
+    }
+  }
+  .howiworkpage-container {
+    .howiworkpage-title {
+      font-size: 40px;
+    }
+    .howiworkpage-contents {
+      font-size: 20px;
+    }
+  }
+  .experience-page-container {
+    .experience-page-title {
+      width: 80%;
+      font-size: 40px;
+    }
+    .experience-page-subtitle {
+      font-size: 24px;
+    }
+    .experience-page-image-box {
+      img {
+        height: 60%;
+      }
+    }
+    .experience-page-text {
+      width: 40%;
+      font-size: 14px;
+    }
+  }
+}
+
+// 2. 900px-1130px
+@include height-900to1130 {
+  .mainpage {
+    .mainpage-text {
+      font-size: 44px;
+    }
+    p::after {
+      height: 58px;
+    }
+  }
+  .page-container {
+    .contents {
+      font-size: 18px;
+    }
+    .skills-page-contents {
+      .subtitle {
+        font-size: 20px;
+      }
+      .skills-page-list-contents {
+        font-size: 14px;
+      }
+      .contents-detail {
+        font-size: 12px;
+      }
+    }
+    .contact-page-subtitle {
+      font-size: 20px;
+    }
+    .contact-page-contents {
+      font-size: 16px;
+    }
+  }
+
+  .projects-page-container {
+    .projects-page-title {
+      font-size: 40px;
+    }
+    .projects-page-button-container {
+      margin-bottom: 20px;
+    }
+    .carousel-container {
+      width: 80%;
+      height: 70%;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .carousel-image-title {
+        font-size: 30px;
+        margin-top: 10px;
+      }
+      .circle-index-button-container {
+        height: 60px;
+        align-items: center;
+      }
+    }
+    .thumnaillist-container {
+      width: 80%;
+      overflow-y: scroll;
+      .thumnaillist-image-container {
+        img {
+          height: 90%;
+        }
+      }
+    }
+  }
+  .howiworkpage-container {
+    .howiworkpage-title {
+      font-size: 40px;
+    }
+    .howiworkpage-contents {
+      font-size: 20px;
+    }
+  }
+  .experience-page-container {
+    .experience-page-title {
+      width: 80%;
+      font-size: 40px;
+    }
+    .experience-page-subtitle {
+      font-size: 30px;
+    }
+    .experience-page-image-box {
+      img {
+        height: 60%;
+      }
+    }
+    .experience-page-text {
+      width: 40%;
+      font-size: 16px;
+    }
+  }
+}
