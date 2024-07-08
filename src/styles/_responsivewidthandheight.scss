@@ -1,0 +1,357 @@
+@import './mixin';
+
+// 너비 (960px ~ 1023px) x 높이 (~ 699px)
+@include tablet-to-laptop-700 {
+  .mainpage {
+    .mainpage-text {
+      font-size: 40px;
+    }
+  }
+  .header-container {
+    .title {
+      font-size: 32px;
+    }
+    .icon-container {
+      width: 140px;
+      svg {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+  .page-container {
+    .page-title {
+      width: 160px;
+      height: 160px;
+      font-size: 30px;
+    }
+    .subtitle {
+      font-size: 20px;
+    }
+    .contents {
+      font-size: 14px;
+    }
+    .skills-page-contents {
+      width: 340px;
+      .skills-page-list-contents {
+        font-size: 14px;
+      }
+    }
+  }
+  .projects-page-container {
+    .projects-page-title {
+      font-size: 30px;
+    }
+    .carousel-container {
+      width: 80%;
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .carousel-image-title {
+        font-size: 30px;
+      }
+      .carousel-image {
+        width: 60%;
+      }
+      .circle-index-button-container {
+        width: 160px;
+        height: 40px;
+        align-items: flex-end;
+        .circle-index-button {
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
+    .thumnaillist-container {
+      width: 60%;
+      gap: 50px;
+      button {
+        margin: 0;
+      }
+      img {
+        height: 100%;
+      }
+    }
+  }
+  .experience-page-container {
+    .experience-page-title {
+      font-size: 30px;
+      margin-bottom: 0;
+    }
+    .experience-page-subtitle {
+      font-size: 24px;
+    }
+    .experience-page-middle-container {
+      width: 80%;
+    }
+    .experience-page-box {
+      padding: 2%;
+    }
+    .experience-page-contents {
+      padding: 4%;
+    }
+    .chevron-button-container {
+      padding: 0;
+      button {
+        width: auto;
+        height: auto;
+        margin: 0;
+      }
+    }
+    .experience-page-image-box {
+      width: 60%;
+      img {
+        width: 90%;
+      }
+    }
+    .experience-page-text {
+      width: 40%;
+      font-size: 14px;
+    }
+  }
+  .howiworkpage-container {
+    .howiworkpage-title {
+      font-size: 30px;
+    }
+    .howiworkpage-contents {
+      font-size: 16px;
+    }
+  }
+}
+
+// 너비 (960px ~ 1023px) x 높이 (700px ~ 799px)
+@include tablet-to-laptop-800 {
+  .mainpage {
+    .mainpage-text {
+      font-size: 44px;
+    }
+  }
+  .header-container {
+    .title {
+      font-size: 36px;
+    }
+    .icon-container {
+      width: 140px;
+      svg {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+  .page-container {
+    .page-title {
+      width: 180px;
+      height: 180px;
+      font-size: 34px;
+    }
+    .subtitle {
+      font-size: 24px;
+    }
+    .contents {
+      font-size: 16px;
+    }
+    .skills-page-contents {
+      width: 40%;
+      .skills-page-list-contents {
+        font-size: 16px;
+      }
+    }
+  }
+  .projects-page-container {
+    .projects-page-title {
+      font-size: 34px;
+    }
+    .carousel-container {
+      width: 80%;
+      height: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 0;
+      .carousel-image-title {
+        font-size: 30px;
+      }
+      .carousel-image {
+        width: 80%;
+      }
+      .circle-index-button-container {
+        width: 160px;
+        height: 40px;
+        align-items: flex-end;
+        .circle-index-button {
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
+    .thumnaillist-container {
+      width: 70%;
+      gap: 30px;
+      button {
+        margin: 0;
+      }
+      img {
+        height: 100%;
+      }
+    }
+  }
+  .experience-page-container {
+    .experience-page-title {
+      font-size: 34px;
+      margin-bottom: 0;
+    }
+    .experience-page-subtitle {
+      font-size: 24px;
+    }
+    .experience-page-middle-container {
+      width: 80%;
+    }
+    .experience-page-box {
+      padding: 0;
+    }
+    .experience-page-contents {
+      padding: 5%;
+    }
+    .chevron-button-container {
+      padding: 0;
+      button {
+        width: auto;
+        height: auto;
+        margin: 0;
+      }
+    }
+    .experience-page-image-box {
+      width: 60%;
+      img {
+        width: 90%;
+      }
+    }
+    .experience-page-text {
+      width: 40%;
+      font-size: 16px;
+    }
+  }
+  .howiworkpage-container {
+    .howiworkpage-title {
+      font-size: 34px;
+    }
+    .howiworkpage-contents {
+      font-size: 18px;
+    }
+  }
+}
+
+// 너비 (960px ~ 1023px) x 높이 (800px ~ 899px)
+@include tablet-to-laptop-900 {
+  .page-container {
+    .page-title {
+      width: 180px;
+      height: 180px;
+      font-size: 36px;
+    }
+    .subtitle {
+      font-size: 26px;
+    }
+    .contents {
+      font-size: 18px;
+    }
+    .skills-page-contents {
+      width: 50%;
+    }
+    .contact-page-subtitle {
+      font-size: 20px;
+    }
+    .contact-page-contents {
+      font-size: 18px;
+      svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+  .projects-page-container {
+    .projects-page-title {
+      font-size: 36px;
+    }
+    .carousel-container {
+      width: 80%;
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 20px;
+      .carousel-image-title {
+        font-size: 30px;
+      }
+      .carousel-image {
+        width: 90%;
+      }
+      .circle-index-button-container {
+        width: 160px;
+        height: 80px;
+        align-items: flex-end;
+        .circle-index-button {
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
+    .thumnaillist-container {
+      width: 80%;
+      gap: 30px;
+      button {
+        margin: 0;
+      }
+      img {
+        height: 100%;
+      }
+    }
+  }
+  .experience-page-container {
+    .experience-page-title {
+      font-size: 36px;
+      margin-bottom: 0;
+    }
+    .experience-page-subtitle {
+      font-size: 26px;
+    }
+    .experience-page-middle-container {
+      width: 80%;
+    }
+    .experience-page-box {
+      padding: 0;
+    }
+    .experience-page-contents {
+      padding: 5%;
+    }
+    .chevron-button-container {
+      padding: 0;
+      button {
+        width: auto;
+        height: auto;
+        margin: 0;
+      }
+    }
+    .experience-page-image-box {
+      width: 60%;
+      img {
+        width: 90%;
+        height: 100%;
+      }
+    }
+    .experience-page-text {
+      width: 40%;
+      font-size: 16px;
+    }
+  }
+  .howiworkpage-container {
+    .howiworkpage-title {
+      font-size: 36px;
+    }
+    .howiworkpage-contents {
+      font-size: 20px;
+    }
+  }
+}

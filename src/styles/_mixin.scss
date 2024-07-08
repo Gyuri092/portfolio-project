@@ -1,42 +1,42 @@
 @import './variable';
 
-// mobile: 최소 mobile ~ 최대 mobile-to-tablet
+// mobile: 최소 335px ~ 최대 534px
 @mixin mobile {
   @media (max-width: #{$mobile-to-tablet - 1px}) {
     @content;
   }
 }
-// mobile-to-tablet: 최소 mobile-to-tablet ~ 최대 tablet
+// mobile-to-tablet: 최소 535px ~ 최대 719px
 @mixin mobile-to-tablet {
   @media (min-width: #{$mobile-to-tablet}) and (max-width: #{$tablet - 1px}) {
     @content;
   }
 }
-// tablet: 최소 tablet ~ 최대 tablet-to-laptop
+// tablet: 최소 720px ~ 최대 959px
 @mixin tablet {
   @media (min-width: #{$tablet}) and (max-width: #{$tablet-to-laptop - 1px}) {
     @content;
   }
 }
-// tablet-to-laptop: 최소 tablet-to-laptop ~ 최대 laptop
+// tablet-to-laptop: 최소 960px ~ 최대 1023px
 @mixin tablet-to-laptop {
   @media (min-width: #{$tablet-to-laptop}) and (max-width: #{$laptop - 1px}) {
     @content;
   }
 }
-// laptop: 최소 laptop ~ 최대 laptop-to-desktop
+// laptop: 최소 1024px ~ 최대 1499px
 @mixin laptop {
   @media (min-width: #{$laptop}) and (max-width: #{$laptop-to-desktop - 1px}) {
     @content;
   }
 }
-// laptop-to-desktop: 최소 laptop-to-desktop ~ 최대 desktop
+// laptop-to-desktop: 최소 1500px ~ 최대 1800px
 @mixin laptop-to-desktop {
   @media (min-width: #{$laptop-to-desktop}) and (max-width: #{$desktop - 1px}) {
     @content;
   }
 }
-// desktop: 최소 desktop
+// desktop: 최소 1800px
 @mixin desktop {
   @media (min-width: #{$desktop}) {
     @content;
@@ -51,6 +51,29 @@
 }
 @mixin height-900to1130 {
   @media (min-height: #{$height-900}) and (max-height: #{$height-1130 - 1}) {
+    @content;
+  }
+}
+
+//---------------------------------------------------------------------------------------------------------
+
+// 너비 (960px ~ 1023px) x 높이 (~ 699px)
+@mixin tablet-to-laptop-700 {
+  @media (min-width: #{$tablet-to-laptop}) and (max-width: #{$laptop - 1px}) and (max-height: #{$height-700 - 1px}) {
+    @content;
+  }
+}
+
+// 너비 (960px ~ 1023px) x 높이 (700px ~ 799px)
+@mixin tablet-to-laptop-800 {
+  @media (min-width: #{$tablet-to-laptop}) and (max-width: #{$laptop - 1px}) and (min-height: #{$height-700}) and (max-height: #{$height-800 - 1}) {
+    @content;
+  }
+}
+
+// 너비 (960px ~ 1023px) x 높이 (800px ~ 899px)
+@mixin tablet-to-laptop-900 {
+  @media (min-width: #{$tablet-to-laptop}) and (max-width: #{$laptop - 1px}) and (min-height: #{$height-800}) and (max-height: #{$height-900 - 1}) {
     @content;
   }
 }
