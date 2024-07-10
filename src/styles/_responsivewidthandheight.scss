@@ -422,3 +422,237 @@
     }
   }
 }
+
+@include mobile-landscape {
+  .mainpage {
+    .mainpage-text {
+      font-size: 28px;
+    }
+    p::after {
+      height: 32px;
+    }
+  }
+  .header-container {
+    padding: 10px 20px !important;
+    .title {
+      font-size: 24px;
+    }
+    .icon-container {
+      width: 100px;
+      button {
+        height: 40px;
+        margin: 0;
+      }
+      svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+  .page-container {
+    height: auto;
+    min-height: 100%;
+    .page-title {
+      width: 100px;
+      height: 100px;
+      font-size: 20px;
+    }
+    .subtitle {
+      font-size: 12px;
+    }
+    .contents {
+      font-size: 10px;
+    }
+    .page-contents {
+      width: 40%;
+    }
+    .skills-page-contents {
+      width: 45%;
+      .subtitle {
+        font-size: 12px;
+      }
+      .skills-page-list-contents {
+        font-size: 10px;
+      }
+      .contents-detail {
+        font-size: 8px;
+      }
+    }
+    .contact-page-subtitle {
+      font-size: 12px;
+    }
+    .contact-page-contents {
+      font-size: 10px;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  .projects-page-container {
+    .projects-page-title {
+      width: 80%;
+      font-size: 20px;
+    }
+    .chevron-button-container {
+      padding: 0;
+      button {
+        width: auto;
+        height: auto;
+        margin: 0;
+      }
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .projects-page-button-container {
+      width: 80%;
+      margin-bottom: 6px;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .carousel-container {
+      width: 80%;
+      height: 75%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 10px;
+      .carousel-image-title {
+        font-size: 14px;
+      }
+      .carousel-image {
+        width: 50%;
+      }
+      .circle-index-button-container {
+        width: 100px;
+        height: 60px;
+        align-items: center;
+        .circle-index-button {
+          width: 10px;
+          height: 10px;
+        }
+      }
+    }
+    .thumnaillist-container {
+      width: 60%;
+      gap: 40px;
+      button {
+        margin: 0;
+      }
+      img {
+        height: 100%;
+      }
+    }
+  }
+  .modal-background {
+    .modal-container {
+      width: 60%;
+      height: 70%;
+      overflow-y: scroll;
+      padding: 30px 20px;
+      font-size: 8px;
+      .modal-contents-container {
+        width: 50%;
+      }
+      .modal-carousel-container {
+        width: 50%;
+        height: 100%;
+        img {
+          width: 100%;
+        }
+      }
+      .modal-contents-title {
+        font-size: 12px;
+      }
+      .modal-contents-date {
+        font-size: 10px;
+      }
+      .modal-contents-summary {
+        font-size: 10px;
+      }
+      .modal-close-button {
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+      .modal-github-link-container {
+        font-size: 8px;
+        margin-bottom: 10px;
+        flex-direction: column;
+        align-items: initial;
+        svg {
+          width: 10px;
+          height: 10px;
+        }
+        a {
+          font-size: 7px;
+        }
+      }
+      .modal-skills-list {
+        font-size: 10px;
+        margin-top: 20px;
+      }
+    }
+  }
+  .experience-page-container {
+    .experience-page-title {
+      width: 80%;
+      font-size: 20px;
+      margin: 0;
+    }
+    .experience-page-subtitle {
+      font-size: 12px;
+    }
+    .experience-page-middle-container {
+      width: 80%;
+    }
+    .experience-page-box {
+      padding: 0;
+    }
+    .experience-page-contents {
+      padding: 6%;
+    }
+    .experience-page-contents {
+      flex-direction: row;
+    }
+    .chevron-button-container {
+      padding: 0;
+      button {
+        width: auto;
+        height: auto;
+        margin: 0;
+      }
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .experience-page-image-box {
+      width: 50%;
+      align-items: center;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .experience-page-text {
+      width: 50%;
+      font-size: 10px;
+      margin-left: 20px;
+    }
+  }
+  .howiworkpage-container {
+    .howiworkpage-contents {
+      font-size: 10px;
+      line-height: 2;
+    }
+    .howiworkpage-title {
+      font-size: 20px;
+    }
+  }
+}
