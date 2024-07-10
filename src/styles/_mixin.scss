@@ -57,23 +57,37 @@
 
 //---------------------------------------------------------------------------------------------------------
 
-// 너비 (960px ~ 1023px) x 높이 (~ 699px)
-@mixin tablet-to-laptop-700 {
-  @media (min-width: #{$tablet-to-laptop}) and (max-width: #{$laptop - 1px}) and (max-height: #{$height-700 - 1px}) {
+// 너비 (960px ~ 1499px) x 높이 (~ 699px)
+@mixin laptop-700 {
+  @media (min-width: #{$tablet-to-laptop}) and (max-width: #{$laptop-to-desktop - 1px}) and (max-height: #{$height-700 - 1px}) {
     @content;
   }
 }
 
-// 너비 (960px ~ 1023px) x 높이 (700px ~ 799px)
-@mixin tablet-to-laptop-800 {
-  @media (min-width: #{$tablet-to-laptop}) and (max-width: #{$laptop - 1px}) and (min-height: #{$height-700}) and (max-height: #{$height-800 - 1}) {
+// 너비 (960px ~ 1499px) x 높이 (700px ~ 799px)
+@mixin laptop-800 {
+  @media (min-width: #{$tablet-to-laptop}) and (max-width: #{$laptop-to-desktop - 1px}) and (min-height: #{$height-700}) and (max-height: #{$height-800 - 1}) {
     @content;
   }
 }
 
-// 너비 (960px ~ 1023px) x 높이 (800px ~ 899px)
-@mixin tablet-to-laptop-900 {
-  @media (min-width: #{$tablet-to-laptop}) and (max-width: #{$laptop - 1px}) and (min-height: #{$height-800}) and (max-height: #{$height-900 - 1}) {
+// 너비 (960px ~ 1499px) x 높이 (800px ~ 899px)
+@mixin laptop-900 {
+  @media (min-width: #{$tablet-to-laptop}) and (max-width: #{$laptop-to-desktop - 1px}) and (min-height: #{$height-800}) and (max-height: #{$height-900 - 1}) {
+    @content;
+  }
+}
+
+// 너비 (1024px ~ 1499px) x 높이 (~ 699px)
+@mixin laptop-700-support {
+  @media (min-width: #{$laptop}) and (max-width: #{$laptop-to-desktop - 1px}) and (max-height: #{$height-700 - 1px}) {
+    @content;
+  }
+}
+
+// 너비 (1024px ~ 1499px) x 높이 (700px ~ 799px)
+@mixin laptop-800-support {
+  @media (min-width: #{$laptop}) and (max-width: #{$laptop-to-desktop - 1px}) and (min-height: #{$height-700}) and (max-height: #{$height-800 - 1}) {
     @content;
   }
 }

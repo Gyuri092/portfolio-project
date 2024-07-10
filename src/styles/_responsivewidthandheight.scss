@@ -1,7 +1,7 @@
 @import './mixin';
 
-// 너비 (960px ~ 1023px) x 높이 (~ 699px)
-@include tablet-to-laptop-700 {
+// 너비 (960px ~ 1499px) x 높이 (~ 699px)
+@include laptop-700 {
   .mainpage {
     .mainpage-text {
       font-size: 40px;
@@ -121,8 +121,8 @@
   }
 }
 
-// 너비 (960px ~ 1023px) x 높이 (700px ~ 799px)
-@include tablet-to-laptop-800 {
+// 너비 (960px ~ 1499px) x 높이 (700px ~ 799px)
+@include laptop-800 {
   .mainpage {
     .mainpage-text {
       font-size: 44px;
@@ -243,8 +243,8 @@
   }
 }
 
-// 너비 (960px ~ 1023px) x 높이 (800px ~ 899px)
-@include tablet-to-laptop-900 {
+// 너비 (960px ~ 1499px) x 높이 (800px ~ 899px)
+@include laptop-900 {
   .page-container {
     .page-title {
       width: 180px;
@@ -352,6 +352,73 @@
     }
     .howiworkpage-contents {
       font-size: 20px;
+    }
+  }
+}
+
+// 너비 (1024px ~ 1499px) x 높이 (~ 699px)
+@include laptop-700-support {
+  .projects-page-container {
+    .projects-page-title {
+      width: 70%;
+      font-size: 30px;
+    }
+    .projects-page-button-container {
+      width: 70%;
+      margin-bottom: 5px;
+      button {
+        margin: 0;
+      }
+    }
+    .carousel-container {
+      width: 70%;
+      height: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .carousel-image-title {
+        font-size: 20px;
+      }
+      .carousel-image {
+        width: 50%;
+      }
+      .chevron-button-container {
+        padding: 0;
+        button {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+// 너비 (1024px ~ 1499px) x 높이 (700px ~ 799px)
+@include laptop-800-support {
+  .projects-page-container {
+    .projects-page-title {
+      width: 70%;
+      font-size: 34px;
+    }
+    .projects-page-button-container {
+      width: 70%;
+      margin-bottom: 5px;
+      button {
+        margin: 0;
+      }
+    }
+    .carousel-container {
+      width: 70%;
+      height: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 0;
+      .carousel-image-title {
+        font-size: 26px;
+      }
+      .carousel-image {
+        width: 60%;
+      }
     }
   }
 }
