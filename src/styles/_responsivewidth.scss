@@ -21,7 +21,6 @@
       width: 100px;
       button {
         height: 40px;
-        margin: 0;
       }
       svg {
         width: 40px;
@@ -51,6 +50,9 @@
       .subtitle {
         font-size: 12px;
       }
+      .skills-list-box {
+        max-height: 220px;
+      }
       .skills-page-list-contents {
         font-size: 10px;
       }
@@ -79,7 +81,6 @@
       button {
         width: auto;
         height: auto;
-        margin: 0;
       }
       svg {
         width: 20px;
@@ -120,9 +121,6 @@
     .thumnaillist-container {
       width: 90%;
       gap: 30px;
-      button {
-        margin: 0;
-      }
       img {
         height: 100%;
       }
@@ -199,7 +197,6 @@
       button {
         width: auto;
         height: auto;
-        margin: 0;
       }
       svg {
         width: 20px;
@@ -276,6 +273,9 @@
       }
       .skills-page-list-contents {
         font-size: 12px;
+      }
+      .skills-list-box {
+        max-height: 300px;
       }
       .contents-detail {
         font-size: 10px;
@@ -402,7 +402,6 @@
       padding: 0;
       button {
         width: auto;
-        margin: 0;
       }
     }
     .experience-page-image-box {
@@ -468,6 +467,9 @@
       width: 52%;
       .skills-page-list-contents {
         font-size: 16px;
+      }
+      .skills-list-box {
+        max-height: 400px;
       }
     }
   }
@@ -564,7 +566,6 @@
       padding: 0;
       button {
         width: auto;
-        margin: 0;
       }
     }
     .experience-page-image-box {
@@ -625,6 +626,9 @@
     .skills-page-contents {
       .skills-page-list-contents {
         font-size: 20px;
+      }
+      .skills-list-box {
+        max-height: 400px;
       }
     }
   }
@@ -967,9 +971,6 @@
     }
   }
   .experience-page-container {
-    button {
-      margin: 0;
-    }
     .experience-page-title {
       width: 70%;
       font-size: 44px;

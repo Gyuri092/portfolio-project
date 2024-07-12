@@ -1,6 +1,5 @@
 @use 'colors' as *;
 
-
 @mixin page-contents($height) {
   height: $height;
   display: flex;
@@ -23,22 +22,23 @@
   width: 560px;
   box-sizing: border-box;
 }
-
-@mixin contents {
+.skills-list-box {
+  max-height: 500px;
+  overflow-y: auto;
+}
+.skills-page-list-contents {
   color: $charcoalGray;
   font-size: 24px;
-}
-
-.skills-page-list-contents {
-  @include contents;
   list-style: inside;
   margin-bottom: 10px;
 }
 
-button {
+.skills-button {
   cursor: initial;
   width: auto;
-  margin-right: 10px;
+}
+.margin-left {
+  margin-left: 10px;
 }
 
 .Database,

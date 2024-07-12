@@ -16,7 +16,11 @@ const exceptionSkills = [
 export default function SkillNameList(props: Props) {
   const [clickedSkill, setClickedSkill] = useState('');
   const { skillName, keyName } = props;
-
+  const skillDetailArray = useMemo(
+    () =>
+      exceptionSkills.includes(skillName) ? [skillName] : skillName.split(', '),
+    [skillName],
+  );
   const detailText = useMemo(() => {
     return {
       when: contentsJson.when.find(
@@ -26,73 +30,38 @@ export default function SkillNameList(props: Props) {
     };
   }, [clickedSkill]);
 
-  const skillNameButton = exceptionSkills.includes(skillName)
-    ? exceptionSkills.map(
-        (exceptionSkillElem) =>
-          skillName === exceptionSkillElem && (
-            <button
-              key={`btn-${skillName}`}
-              className={`${keyName} ${clickedSkill === exceptionSkillElem && 'clicked-button'}`}
-              type="button"
-              onClick={() => {
-                if (keyName === 'Tools') return;
-                if (clickedSkill === skillName) {
-                  setClickedSkill('');
-                } else {
-                  setClickedSkill(skillName);
-                }
-              }}
-            >
-              {skillName}
-            </button>
-          ),
-      )
-    : skillName.split(', ').map((eachSkillName, eachSkillNameIndex) => (
-        <button
-          key={`btn-${eachSkillName}`}
-          className={`${keyName} ${clickedSkill === eachSkillName && 'clicked-button'}`}
-          type="button"
-          onClick={() => {
-            if (keyName === 'Tools') return;
-            if (clickedSkill === eachSkillName) {
-              setClickedSkill('');
-            } else {
-              setClickedSkill(eachSkillName);
-            }
-          }}
-        >
-          {`${eachSkillName}${eachSkillNameIndex !== skillName.split(',').length - 1 ? ',' : ''}`}
-        </button>
-      ));
-
-  const skillDetail = exceptionSkills.includes(skillName)
-    ? exceptionSkills.map(
-        (exceptionSkillElem) =>
-          clickedSkill === exceptionSkillElem && (
-            <div key={`div-${exceptionSkillElem}`} className="contents-detail">
-              <p>When?</p>
-              <p>{detailText.when?.content}</p>
-              <p>Why?</p>
-              <p>{detailText.why?.content}</p>
-            </div>
-          ),
-      )
-    : skillName.split(', ').map(
-        (eachSkillName) =>
-          clickedSkill === eachSkillName && (
-            <div key={`div-${eachSkillName}`} className="contents-detail">
-              <p>When?</p>
-              <p>{detailText.when?.content}</p>
-              <p>Why?</p>
-              <p>{detailText.why?.content}</p>
-            </div>
-          ),
-      );
-
   return (
     <li className="skills-page-list-contents">
-      {skillNameButton}
-      {skillDetail}
+      {skillDetailArray.map((elem, index) => {
+        const buttonName = exceptionSkills.includes(elem)
+          ? elem
+          : `${elem}${index !== skillName.split(',').length - 1 ? ',' : ''}`;
+
+        return (
+          <button
+            key={`btn-${buttonName}`}
+            className={`skills-button ${keyName} ${clickedSkill === elem && 'clicked-button'} ${index !== 0 && 'margin-left'}`}
+            type="button"
+            onClick={() => {
+              if (keyName === 'Tools') return;
+              setClickedSkill(clickedSkill === elem ? '' : elem);
+            }}
+          >
+            {buttonName}
+          </button>
+        );
+      })}
+      {skillDetailArray.map(
+        (elem) =>
+          clickedSkill === elem && (
+            <div key={`div-${elem}`} className="contents-detail">
+              <p>When?</p>
+              <p>{detailText.when?.content}</p>
+              <p>Why?</p>
+              <p>{detailText.why?.content}</p>
+            </div>
+          ),
+      )}
     </li>
   );
 }
