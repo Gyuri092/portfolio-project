@@ -19,18 +19,19 @@
 
 @mixin contents {
   color: $charcoalGray;
-  font-size: 24px;
+  font-size: 16px;
 }
 
 .contact-page-contents {
   @include page-contents(30%);
+  gap: 20px;
   svg {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
   }
 }
 
-@mixin subtitle($fontsize: 36px) {
+@mixin subtitle($fontsize: 30px) {
   color: $lavenderBlue;
   font-size: $fontsize;
   font-weight: 600;
@@ -45,7 +46,7 @@
 }
 
 .contact-page-subtitle {
-  @include subtitle(30px);
+  @include subtitle(20px);
 }
 
 .contact-page-contents {
