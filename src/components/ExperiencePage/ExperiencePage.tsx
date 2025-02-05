@@ -26,7 +26,7 @@ export default function ExperiencePage() {
     <div className="experience-page-container">
       <p className="experience-page-title">Experience</p>
       <div className="experience-page-middle-container">
-        <div className="chevron-button-container">
+        <div className="experience-chevron-button-container">
           <button
             type="button"
             className="chevron-button"
