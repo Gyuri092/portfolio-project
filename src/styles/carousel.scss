@@ -4,14 +4,15 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 50%;
-  height: 70%;
-  padding-top: 60px;
+  height: 60%;
+  padding-top: 20px;
   transition: background-color 0.3s ease;
   overflow: hidden;
   box-sizing: border-box;
+  gap: 30px;
 }
 
 .mbtiDetectiveBg {
@@ -54,9 +55,9 @@
   display: flex;
   justify-content: center;
   color: $midnightBlack;
-  font-size: 46px;
+  font-size: 24px;
   font-weight: 600;
-  margin-bottom: 38px;
+  margin-bottom: 20px;
 }
 
 .carousel-image {
@@ -94,16 +95,15 @@
 }
 
 .circle-index-button-container {
-  width: 200px;
-  height: 100px;
+  width: 120px;
   display: flex;
   justify-content: space-between;
 }
 
 .circle-index-button {
   cursor: pointer;
-  width: 20px;
-  height: 20px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background: $slateGray;
 }

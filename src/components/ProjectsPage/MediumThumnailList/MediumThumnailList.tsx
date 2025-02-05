@@ -12,7 +12,7 @@ export default function MediumThumnailList() {
     <div className="thumnaillist-container">
       {imageDataArray.map((elem, index) => (
         <div key={elem} className="thumnaillist-image-container">
-          <Image src={elem} alt={elem} width={450} height={314} />
+          <Image src={elem} alt={elem} width={360} height={240} />
           <button
             type="button"
             onClick={() => {

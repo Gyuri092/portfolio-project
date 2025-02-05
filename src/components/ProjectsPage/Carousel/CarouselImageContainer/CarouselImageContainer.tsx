@@ -81,8 +81,8 @@ export default function CarouselImageContainer(props: Props) {
               className="carousel-image"
               src={src}
               alt={title}
-              width={882}
-              height={469}
+              width={600}
+              height={300}
             />
             <button
               type="button"
