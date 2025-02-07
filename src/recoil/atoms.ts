@@ -5,8 +5,13 @@ const darkModeState = atom({
   default: false,
 });
 
-const showModalState = atom({
-  key: 'showModalState',
+const showProjectsModalState = atom({
+  key: 'showProjectsModalState',
+  default: false,
+});
+
+const showSkillsModalState = atom({
+  key: 'showSkillsModalState',
   default: false,
 });
 
@@ -35,6 +40,7 @@ export {
   currentCarouselIndexState,
   currentIndexState,
   darkModeState,
-  showModalState,
+  showProjectsModalState,
+  showSkillsModalState,
   stopIntervalState,
 };

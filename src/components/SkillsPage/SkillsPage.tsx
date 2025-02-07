@@ -1,4 +1,8 @@
+import { showSkillsModalState } from '@/recoil/atoms';
 import '@/styles/skillspage.scss';
+import { createPortal } from 'react-dom';
+import { useRecoilValue } from 'recoil';
+import SkillsModal from '../Modal/SkillsModal';
 import SkillNameList from './SkillNameList/SkillNameList';
 
 const skillsOject = {
@@ -9,6 +13,7 @@ const skillsOject = {
 };
 
 export default function SkillsPage() {
+  const showSkillsModal = useRecoilValue(showSkillsModalState);
   return (
     <div className="page-container">
       <div className="page-title">Skills</div>
@@ -30,6 +35,7 @@ export default function SkillsPage() {
           );
         })}
       </div>
+      {showSkillsModal && createPortal(<SkillsModal />, document.body)}
     </div>
   );
 }

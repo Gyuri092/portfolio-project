@@ -1,11 +1,11 @@
-import Modal from '@/components/Modal/Modal';
+import ProjectsModal from '@/components/Modal/ProjectsModal';
 import MediumIcon from '@/icons/medium.svg';
 import MediumIconInDarkMode from '@/icons/mediumInDarkMode.svg';
 import ViewCarouselIcon from '@/icons/viewCarousel.svg';
 import ViewCarouselIconInDarkMode from '@/icons/viewCarouselInDarkMode.svg';
 import {
   darkModeState,
-  showModalState,
+  showProjectsModalState,
   stopIntervalState,
 } from '@/recoil/atoms';
 import '@/styles/projectspage.scss';
@@ -18,7 +18,7 @@ import MediumThumnailList from './MediumThumnailList/MediumThumnailList';
 export default function ProjectsPage() {
   const [viewCarousel, setViewCarousel] = useState(true);
   const darkMode = useRecoilValue(darkModeState);
-  const showModal = useRecoilValue(showModalState);
+  const showProjectsModal = useRecoilValue(showProjectsModalState);
   const [, setStopInterval] = useRecoilState(stopIntervalState);
 
   const mediumIcon = darkMode ? <MediumIconInDarkMode /> : <MediumIcon />;
@@ -44,7 +44,7 @@ export default function ProjectsPage() {
         </button>
       </div>
       {viewCarousel ? <Carousel /> : <MediumThumnailList />}
-      {showModal && createPortal(<Modal />, document.body)}
+      {showProjectsModal && createPortal(<ProjectsModal />, document.body)}
     </div>
   );
 }

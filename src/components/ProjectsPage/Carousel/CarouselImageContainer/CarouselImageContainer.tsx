@@ -2,7 +2,7 @@ import {
   carouselTransitionState,
   currentCarouselIndexState,
   currentIndexState,
-  showModalState,
+  showProjectsModalState,
   stopIntervalState,
 } from '@/recoil/atoms';
 import Image from 'next/image';
@@ -16,7 +16,7 @@ interface Props {
 
 export default function CarouselImageContainer(props: Props) {
   const { imageSrcArray, backgroundColors } = props;
-  const [, setShowModal] = useRecoilState(showModalState);
+  const [, setShowProjectsModal] = useRecoilState(showProjectsModalState);
   const [currentIndex, setCurrentIndex] = useRecoilState(currentIndexState);
   const [carouselTransition, setCarouselTransition] = useRecoilState(
     carouselTransitionState,
@@ -88,7 +88,7 @@ export default function CarouselImageContainer(props: Props) {
               type="button"
               className="carousel-image-button"
               onClick={() => {
-                setShowModal((prev) => !prev);
+                setShowProjectsModal((prev) => !prev);
                 setCurrentCarouselIndex(currentIndex);
                 setStopInterval((prev) => !prev);
               }}

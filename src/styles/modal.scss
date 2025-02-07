@@ -1,4 +1,5 @@
 @use 'colors' as *;
+@use 'size';
 
 .modal-background {
   width: 100%;
@@ -19,8 +20,15 @@ p {
 }
 
 .modal-container {
-  width: 800px;
-  height: 600px;
+  &.small {
+    @include size.small;
+  }
+  &.medium {
+    @include size.medium;
+  }
+  &.large {
+    @include size.large;
+  }
   display: flex;
   justify-content: space-between;
   background: $white;

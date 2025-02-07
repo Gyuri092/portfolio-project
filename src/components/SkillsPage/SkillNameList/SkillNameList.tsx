@@ -1,6 +1,8 @@
 import contentsJson from '@/components/SkillsPage/data/contents.json';
+import { showSkillsModalState } from '@/recoil/atoms';
 import '@/styles/skillspage.scss';
 import { useMemo, useState } from 'react';
+import { useRecoilState } from 'recoil';
 
 interface Props {
   skillName: string;
@@ -15,6 +17,7 @@ const exceptionSkills = [
 
 export default function SkillNameList(props: Props) {
   const [clickedSkill, setClickedSkill] = useState('');
+  const [, setShowSkillsModal] = useRecoilState(showSkillsModalState);
   const { skillName, keyName } = props;
   const skillDetailArray = useMemo(
     () =>
@@ -45,13 +48,14 @@ export default function SkillNameList(props: Props) {
             onClick={() => {
               if (keyName === 'Tools') return;
               setClickedSkill(clickedSkill === elem ? '' : elem);
+              setShowSkillsModal((prev) => !prev);
             }}
           >
             {buttonName}
           </button>
         );
       })}
-      {skillDetailArray.map(
+      {/* {skillDetailArray.map(
         (elem) =>
           clickedSkill === elem && (
             <div key={`div-${elem}`} className="contents-detail">
@@ -61,7 +65,7 @@ export default function SkillNameList(props: Props) {
               <p>{detailText.why?.content}</p>
             </div>
           ),
-      )}
+      )} */}
     </li>
   );
 }
