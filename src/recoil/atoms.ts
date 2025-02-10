@@ -35,12 +35,18 @@ const stopIntervalState = atom({
   default: false,
 });
 
+const showSkillsDetailState = atom({
+  key: 'showSkillsDetailState',
+  default: false,
+});
+
 export {
   carouselTransitionState,
   currentCarouselIndexState,
   currentIndexState,
   darkModeState,
   showProjectsModalState,
+  showSkillsDetailState,
   showSkillsModalState,
   stopIntervalState,
 };
