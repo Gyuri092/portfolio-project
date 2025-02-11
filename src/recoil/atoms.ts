@@ -40,8 +40,14 @@ const showSkillsDetailState = atom({
   default: false,
 });
 
+const clickedSkillsState = atom<string[]>({
+  key: 'clickedSkillsState',
+  default: [],
+});
+
 export {
   carouselTransitionState,
+  clickedSkillsState,
   currentCarouselIndexState,
   currentIndexState,
   darkModeState,
