@@ -12,7 +12,7 @@ export const SkillsDetail = () => {
     return `when: ${when.content}\nwhy: ${why.content}`;
   };
   return (
-    <div className="page-contents">
+    <div className="skills-detail">
       {clickedSkills.map((skill) => {
         return (
           <div key={skill} className="skills-detail-text">

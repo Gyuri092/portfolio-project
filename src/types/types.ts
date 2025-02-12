@@ -27,3 +27,7 @@ export type ExperienceObjectType = {
   link: LinkType[];
   text: string;
 };
+
+export interface SkillsType {
+  [key: string]: string;
+}
