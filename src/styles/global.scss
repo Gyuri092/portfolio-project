@@ -94,9 +94,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  div {
-    margin-bottom: 20px;
-  }
   line-height: 1.7;
   animation: fadein 2s;
   @keyframes fadein {
@@ -111,6 +108,9 @@
 
 .page-contents {
   @include page-contents();
+  div {
+    margin-bottom: 20px;
+  }
 }
 
 .subtitle {
@@ -122,4 +122,19 @@
 .contents {
   color: $charcoalGray;
   font-size: 16px;
+}
+
+/* 스크롤바 디자인 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, $lightpastelLilac, $pastelLilac);
+  border-radius: 10px;
+  opacity: 0.7;
 }

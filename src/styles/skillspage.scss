@@ -3,13 +3,11 @@
 
 .skills-page-contents {
   @include global.page-contents();
-  border: 1px solid blue;
-  width: 50%;
+  width: 33%;
 }
 
 .skills-list-box {
   max-height: 500px;
-  border: 1px solid red;
 }
 
 .skills-page-list-contents {
@@ -84,7 +82,7 @@
   border-radius: 5px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  box-shadow: 4px -2px 4px $pastelLilac;
+  // box-shadow: 4px -2px 6px $pastelLilac;
   color: $lavenderBlue;
   font-weight: 600;
   cursor: pointer;
@@ -102,12 +100,77 @@
   }
 }
 
+.currentTab {
+  background-color: $lightpastelLilac;
+}
+
 .skills-page-tab-divider {
   width: 100%;
   height: 20px;
-  background-color: $white;
+  background-color: $lightpastelLilac;
 }
 
 .skills-page-card-grid {
+  height: 500px;
   background-color: $white;
+  padding: 10px 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 20px;
+  overflow-y: scroll;
+  border-bottom: 20px solid $lightpastelLilac;
+  border-left: 1px solid $lightpastelLilac;
+}
+
+.skills-page-card-container {
+  perspective: 1000px;
+  width: 100%;
+  height: 240px;
+}
+
+.skills-page-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.skills-page-card-container.flipped .skills-page-card-inner {
+  transform: rotateY(-180deg);
+}
+
+.skills-page-card {
+  width: 100%;
+  height: 240px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-shadow:
+    -0.5px -0.5px 4px $lightSilver,
+    4px 4px 4px $lightSilver;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front {
+  &:hover {
+    font-weight: 600;
+    transition: font-weight 0.1s ease-in-out;
+  }
+}
+
+.back {
+  transform: rotateY(-180deg);
+  font-size: 12px;
+  white-space: pre-wrap;
+  text-align: start;
+  align-items: start;
+}
+
+.clickable {
+  cursor: pointer;
 }

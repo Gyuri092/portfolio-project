@@ -1,5 +1,5 @@
 {
-  "Front-End": "HTML, CSS\nJavaScript, TypeScript\nReact, Next.js\nRedux, Recoil, Zustand\nReact-query, SWR\nTailwindCSS, Styled-Components\nEmotion, SaSS",
+  "Front-End": "HTML, CSS\nJavaScript, TypeScript\nReact\nNext.js\nRedux\nRecoil\nZustand\nReact-query\nSWR\nTailwindCSS\nStyled-Components\nEmotion\nSaSS",
   "Database": "Oracle, MS-SQL",
   "Tools": "VScode, Github, Gitlab\nFigma, Figjam\nNotion, Discord, Slack"
 }

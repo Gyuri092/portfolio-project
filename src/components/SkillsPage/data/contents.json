@@ -102,6 +102,14 @@
       "skill": "Oracle, MS-SQL",
 
       "content": "전사 수출입시스템/회계시스템 개발에서 사용한 경험이 있습니다."
+    },
+
+    {
+      "id": 13,
+
+      "skill": "SaSS",
+
+      "content": "Portfolio 프로젝트(현재 웹 페이지)에서 사용했습니다."
     }
   ],
   "why": [
@@ -207,6 +215,14 @@
       "skill": "Oracle, MS-SQL",
 
       "content": "대용량의 데이터베이스를 관리하기 용이하고 프론트엔드를 구성하는 VbScript와의 호환성이 좋기 때문에 사용했습니다."
+    },
+
+    {
+      "id": 13,
+
+      "skill": "SaSS",
+
+      "content": "Next.js와의 호환성을 높이고 스타일 코드와 jsx를 분리하여 개발하기 위해 사용했습니다."
     }
   ]
 }
