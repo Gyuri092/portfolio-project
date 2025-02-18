@@ -67,6 +67,14 @@
   .projects-page-title {
     color: $pastelLilac;
   }
+  .thumnaillist-image-container {
+    img {
+      border-radius: 10px;
+      box-shadow:
+        -0.5px -0.5px 4px $eclipseBlack,
+        4px 4px 4px $eclipseBlack;
+    }
+  }
   .experience-page-title {
     color: $pastelLilac;
   }
