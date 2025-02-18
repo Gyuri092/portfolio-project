@@ -1,11 +1,12 @@
-import { SkillsType } from '@/types/types';
+import FlipIcon from '@/icons/flip_royalPurple.svg';
+import { SkillsKeyType, SkillsType } from '@/types/types';
 import { useState } from 'react';
 import skillsDetail from '../data/contents.json';
 import skills from '../data/skills.json';
 
 export const SkillsTab = () => {
   const skillList: SkillsType = skills;
-  const [currentTab, setCurrentTab] = useState('Front-End');
+  const [currentTab, setCurrentTab] = useState<keyof SkillsType>('Front-End');
   const [flippedCards, setFlippedCards] = useState<string[]>([]);
 
   const toggleCard = (item: string) => {
@@ -20,7 +21,7 @@ export const SkillsTab = () => {
     <div>
       <div className="skliis-page-tab">
         <div>
-          {Object.entries(skillList).map(([key]) => (
+          {(Object.keys(skillList) as SkillsKeyType[]).map((key) => (
             <button
               type="button"
               key={key}
@@ -31,7 +32,23 @@ export const SkillsTab = () => {
             </button>
           ))}
         </div>
-        <div className="skills-page-tab-divider" />
+        <div className="skills-page-tab-divider">
+          <button
+            type="button"
+            className="clickable"
+            onClick={() =>
+              currentTab !== 'Tools' &&
+              skillList[currentTab] &&
+              setFlippedCards((prev) =>
+                prev.length === skillList[currentTab].split('\n').length
+                  ? []
+                  : skillList[currentTab].split('\n'),
+              )
+            }
+          >
+            <FlipIcon />
+          </button>
+        </div>
       </div>
       <div className="skills-page-card-grid">
         {skillList[currentTab] &&
@@ -44,14 +61,14 @@ export const SkillsTab = () => {
                 <button
                   type="button"
                   className={`skills-page-card front ${currentTab !== 'Tools' && 'clickable'}`}
-                  onClick={() => toggleCard(item)}
+                  onClick={() => currentTab !== 'Tools' && toggleCard(item)}
                 >
                   {item}
                 </button>
                 <button
                   type="button"
                   className={`skills-page-card back ${currentTab !== 'Tools' && 'clickable'}`}
-                  onClick={() => toggleCard(item)}
+                  onClick={() => currentTab !== 'Tools' && toggleCard(item)}
                 >
                   {`When:\n${
                     skillsDetail.when.find((when) => when.skill === item)

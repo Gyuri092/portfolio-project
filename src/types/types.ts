@@ -28,6 +28,8 @@ export type ExperienceObjectType = {
   text: string;
 };
 
-export interface SkillsType {
-  [key: string]: string;
-}
+export type SkillsKeyType = 'Front-End' | 'Database' | 'Tools';
+
+export type SkillsType = {
+  [Key in SkillsKeyType]: string;
+};

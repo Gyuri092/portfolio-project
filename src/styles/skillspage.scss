@@ -106,8 +106,10 @@
 
 .skills-page-tab-divider {
   width: 100%;
-  height: 20px;
   background-color: $lightpastelLilac;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .skills-page-card-grid {
