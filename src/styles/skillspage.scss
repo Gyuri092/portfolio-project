@@ -6,66 +6,6 @@
   width: 33%;
 }
 
-.skills-list-box {
-  max-height: 500px;
-}
-
-.skills-page-list-contents {
-  color: $charcoalGray;
-  font-size: 16px;
-  list-style: inside;
-  margin-bottom: 10px;
-}
-
-.skills-button {
-  cursor: initial;
-  width: auto;
-}
-
-.margin-left {
-  margin-left: 10px;
-}
-
-.Database,
-.Front-End {
-  cursor: pointer;
-  border-radius: 20px;
-  &:hover {
-    // background-color: $lightpastelLilac;
-    background-color: pink;
-  }
-}
-
-.clicked-button {
-  // background-color: $lightpastelLilac;
-  background-color: pink;
-}
-
-.contents-detail {
-  font-size: 16px;
-  margin: 10px 0 30px 0;
-  padding: 4px 4px;
-  border-radius: 5px;
-  border: 1px solid $pastelLilac;
-  p:nth-of-type(odd) {
-    font-weight: 600;
-  }
-}
-
-.skills-detail {
-  @include global.page-contents();
-  max-width: 20%;
-  height: 500px;
-  border: 2px solid $pastelLilac;
-  border-radius: 10px;
-  padding: 30px 20px;
-  justify-content: flex-start;
-}
-
-.skills-detail-text {
-  white-space: pre-wrap;
-}
-
 .skliis-page-tab {
   display: flex;
   flex-direction: column;
@@ -110,6 +50,11 @@
   padding: 10px 20px;
   display: flex;
   justify-content: flex-end;
+}
+
+.skills-page-all-flip-button {
+  display: flex;
+  align-items: center;
 }
 
 .skills-page-card-grid {

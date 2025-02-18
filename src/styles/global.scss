@@ -19,6 +19,21 @@
   height: 100%;
 }
 
+/* 스크롤바 디자인 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, $lightpastelLilac, $pastelLilac);
+  border-radius: 10px;
+  opacity: 0.7;
+}
+
 .darkmode {
   background-color: $charcoalGray;
   div {
@@ -57,6 +72,32 @@
   }
   .contact-page-subtitle {
     color: $pastelLilac;
+  }
+  .skills-page-tab-name {
+    color: $white;
+    background-color: $midnightIndigo;
+  }
+  .skills-page-tab-divider {
+    background-color: $duskyIndigo;
+  }
+  .currentTab {
+    background-color: $duskyIndigo;
+  }
+  .skills-page-card-grid {
+    background-color: $lightslateGray;
+    border-bottom: 20px solid $shadowGray;
+    border-left: none;
+  }
+  .skills-page-card {
+    background-color: $ironGray;
+    box-shadow:
+      -0.5px -0.5px 4px $shadowGray,
+      4px 4px 4px $shadowGray;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, $ironGray, $fogGray);
+    border-radius: 10px;
+    opacity: 0.7;
   }
 }
 
@@ -122,19 +163,4 @@
 .contents {
   color: $charcoalGray;
   font-size: 16px;
-}
-
-/* 스크롤바 디자인 */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, $lightpastelLilac, $pastelLilac);
-  border-radius: 10px;
-  opacity: 0.7;
 }

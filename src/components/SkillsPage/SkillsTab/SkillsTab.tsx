@@ -1,6 +1,9 @@
 import FlipIcon from '@/icons/flip_royalPurple.svg';
+import DarkmodeFlipIcon from '@/icons/flip_white.svg';
+import { darkModeState } from '@/recoil/atoms';
 import { SkillsKeyType, SkillsType } from '@/types/types';
 import { useState } from 'react';
+import { useRecoilValue } from 'recoil';
 import skillsDetail from '../data/contents.json';
 import skills from '../data/skills.json';
 
@@ -8,6 +11,7 @@ export const SkillsTab = () => {
   const skillList: SkillsType = skills;
   const [currentTab, setCurrentTab] = useState<keyof SkillsType>('Front-End');
   const [flippedCards, setFlippedCards] = useState<string[]>([]);
+  const darkMode = useRecoilValue(darkModeState);
 
   const toggleCard = (item: string) => {
     setFlippedCards((prev) =>
@@ -35,7 +39,7 @@ export const SkillsTab = () => {
         <div className="skills-page-tab-divider">
           <button
             type="button"
-            className="clickable"
+            className="skills-page-all-flip-button clickable"
             onClick={() =>
               currentTab !== 'Tools' &&
               skillList[currentTab] &&
@@ -46,7 +50,7 @@ export const SkillsTab = () => {
               )
             }
           >
-            <FlipIcon />
+            {darkMode ? <DarkmodeFlipIcon /> : <FlipIcon />}
           </button>
         </div>
       </div>
