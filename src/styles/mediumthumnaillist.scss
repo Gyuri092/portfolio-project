@@ -1,14 +1,21 @@
+@use 'colors' as *;
 .thumnaillist-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 50px;
 }
 
 .thumnaillist-image-container {
   position: relative;
   &:hover {
-      transform: scale(1.1);
-      transition: all 0.2s ease-in-out;
+    transform: scale(1.1);
+    transition: all 0.2s ease-in-out;
+  }
+  img {
+    border-radius: 10px;
+    box-shadow:
+      -0.5px -0.5px 4px $lightSilver,
+      4px 4px 4px $lightSilver;
   }
   button {
     cursor: pointer;

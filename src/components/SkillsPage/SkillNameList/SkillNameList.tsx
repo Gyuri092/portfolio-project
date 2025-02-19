@@ -1,67 +1,71 @@
-import contentsJson from '@/components/SkillsPage/data/contents.json';
+import { clickedSkillsState, showSkillsDetailState } from '@/recoil/atoms';
 import '@/styles/skillspage.scss';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo } from 'react';
+import { useRecoilState } from 'recoil';
 
-interface Props {
-  skillName: string;
-  keyName: string;
-}
+const skillsOject = {
+  'Front-End':
+    'HTML, CSS\nJavaScript, TypeScript\nReact, Next.js\nRedux, Recoil, Zustand\nReact-query, SWR\nTailwindCSS, Styled-Components\nEmotion, SaSS',
+  Database: 'Oracle, MS-SQL',
+  Tools: 'VScode, Github, Gitlab\nFigma, Figjam\nNotion, Discord, Slack',
+};
 
-const exceptionSkills = [
-  'HTML, CSS',
-  'JavaScript, TypeScript',
-  'Oracle, MS-SQL',
-];
+const exceptionSkills = 'HTML, CSS, JavaScript, TypeScript, Oracle, MS-SQL';
 
-export default function SkillNameList(props: Props) {
-  const [clickedSkill, setClickedSkill] = useState('');
-  const { skillName, keyName } = props;
-  const skillDetailArray = useMemo(
-    () =>
-      exceptionSkills.includes(skillName) ? [skillName] : skillName.split(', '),
-    [skillName],
+export default function SkillNameList() {
+  const [clickedSkills, setClickedSkills] = useRecoilState(clickedSkillsState);
+  const [, setShowSkillsDetail] = useRecoilState(showSkillsDetailState);
+  const isClickedSkillsEmpty = useMemo(
+    () => clickedSkills.length === 0,
+    [clickedSkills],
   );
-  const detailText = useMemo(() => {
-    return {
-      when: contentsJson.when.find(
-        (whenElem) => whenElem.skill === clickedSkill,
-      ),
-      why: contentsJson.why.find((whyElem) => whyElem.skill === clickedSkill),
-    };
-  }, [clickedSkill]);
+  useEffect(() => {
+    setShowSkillsDetail(!isClickedSkillsEmpty);
+  }, [isClickedSkillsEmpty, setShowSkillsDetail]);
 
-  return (
-    <li className="skills-page-list-contents">
-      {skillDetailArray.map((elem, index) => {
-        const buttonName = exceptionSkills.includes(elem)
-          ? elem
-          : `${elem}${index !== skillName.split(',').length - 1 ? ',' : ''}`;
+  const renderButton = (key: string, name: string, index: number) => {
+    return (
+      <button
+        key={`btn-${name}`}
+        className={`skills-button ${key} ${clickedSkills.includes(name) && 'clicked-button'} ${index !== 0 && 'margin-left'}`}
+        type="button"
+        onClick={() => {
+          if (key === 'Tools') return;
+          setClickedSkills((prev) => {
+            const updatedSkills = prev.includes(name)
+              ? prev.filter((v) => v !== name)
+              : [...prev, name];
+            return updatedSkills;
+          });
+        }}
+      >
+        {name}
+      </button>
+    );
+  };
 
-        return (
-          <button
-            key={`btn-${buttonName}`}
-            className={`skills-button ${keyName} ${clickedSkill === elem && 'clicked-button'} ${index !== 0 && 'margin-left'}`}
-            type="button"
-            onClick={() => {
-              if (keyName === 'Tools') return;
-              setClickedSkill(clickedSkill === elem ? '' : elem);
-            }}
-          >
-            {buttonName}
-          </button>
-        );
-      })}
-      {skillDetailArray.map(
-        (elem) =>
-          clickedSkill === elem && (
-            <div key={`div-${elem}`} className="contents-detail">
-              <p>When?</p>
-              <p>{detailText.when?.content}</p>
-              <p>Why?</p>
-              <p>{detailText.why?.content}</p>
-            </div>
-          ),
-      )}
-    </li>
-  );
+  return Object.entries(skillsOject).map(([key, value]) => {
+    return (
+      <div key={key} className="skills-list-box">
+        <p className="subtitle">{key}</p>
+        <ul>
+          {value.split('\n').map((skillName) => (
+            <li key={skillName} className="skills-page-list-contents">
+              {exceptionSkills.includes(skillName)
+                ? renderButton(key, skillName, 0)
+                : skillName.split(', ').map((elem, index) => {
+                    const buttonName = exceptionSkills
+                      .split(', ')
+                      .includes(elem)
+                      ? skillName
+                      : `${elem}${index !== skillName.split(',').length - 1 ? ',' : ''}`;
+
+                    return renderButton(key, buttonName, index);
+                  })}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  });
 }

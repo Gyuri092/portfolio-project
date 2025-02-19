@@ -3,7 +3,7 @@
     {
       "title": "CS 스터디",
       "src": "/images/csStudy.png",
-      "size": { "width": 931, "height": 572 },
+      "size": { "width": 300, "height": 200 },
       "link": [
         {
           "name": "Youtube",
@@ -20,7 +20,7 @@
     {
       "title": "테오의 구글 스프린트",
       "src": "/images/teoSprint.png",
-      "size": { "width": 965, "height": 591 },
+      "size": { "width": 300, "height": 200 },
       "link": [
         {
           "name": "회고글",

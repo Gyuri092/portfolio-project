@@ -4,7 +4,6 @@
 
 @use 'responsive';
 
-
 .rootpage {
   padding: 30px 30px;
   width: 100%;
@@ -18,6 +17,21 @@
 .wrapper {
   width: 100%;
   height: 100%;
+}
+
+/* 스크롤바 디자인 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, $lightpastelLilac, $pastelLilac);
+  border-radius: 10px;
+  opacity: 0.7;
 }
 
 .darkmode {
@@ -53,11 +67,45 @@
   .projects-page-title {
     color: $pastelLilac;
   }
+  .thumnaillist-image-container {
+    img {
+      border-radius: 10px;
+      box-shadow:
+        -0.5px -0.5px 4px $eclipseBlack,
+        4px 4px 4px $eclipseBlack;
+    }
+  }
   .experience-page-title {
     color: $pastelLilac;
   }
   .contact-page-subtitle {
     color: $pastelLilac;
+  }
+  .skills-page-tab-name {
+    color: $white;
+    background-color: $midnightIndigo;
+  }
+  .skills-page-tab-divider {
+    background-color: $duskyIndigo;
+  }
+  .currentTab {
+    background-color: $duskyIndigo;
+  }
+  .skills-page-card-grid {
+    background-color: $lightslateGray;
+    border-bottom: 20px solid $shadowGray;
+    border-left: none;
+  }
+  .skills-page-card {
+    background-color: $ironGray;
+    box-shadow:
+      -0.5px -0.5px 4px $shadowGray,
+      4px 4px 4px $shadowGray;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, $ironGray, $fogGray);
+    border-radius: 10px;
+    opacity: 0.7;
   }
 }
 
@@ -65,7 +113,7 @@
   background-color: $white;
 }
 
-.page-container {
+@mixin page-container {
   width: 100%;
   height: auto;
   min-height: 100%;
@@ -78,25 +126,22 @@
 
 .page-title {
   color: $royalPurple;
-  font-size: 70px;
-  width: 300px;
-  height: 300px;
+  font-size: 30px;
+  width: 160px;
+  height: 160px;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 4px solid $royalPurple;
   border-radius: 50%;
-  margin-right: 4%;
 }
 
-.page-contents {
+@mixin page-contents {
+  max-width: 50%;
   height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  div {
-    margin-bottom: 20px;
-  }
   line-height: 1.7;
   animation: fadein 2s;
   @keyframes fadein {
@@ -109,13 +154,25 @@
   }
 }
 
+.page-container {
+  @include page-container();
+  gap: 50px;
+}
+
+.page-contents {
+  @include page-contents();
+  div {
+    margin-bottom: 20px;
+  }
+}
+
 .subtitle {
   color: $lavenderBlue;
-  font-size: 36px;
+  font-size: 20px;
   font-weight: 600;
 }
 
 .contents {
   color: $charcoalGray;
-  font-size: 24px;
+  font-size: 16px;
 }

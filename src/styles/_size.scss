@@ -1,0 +1,16 @@
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin small {
+  @include size(300px, 200px);
+}
+
+@mixin medium {
+  @include size(500px, 400px);
+}
+
+@mixin large {
+  @include size(800px, 600px);
+}

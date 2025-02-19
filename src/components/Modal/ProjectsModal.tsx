@@ -2,7 +2,7 @@ import CloseIcon from '@/icons/close.svg';
 import GithubIcon from '@/icons/githubBlack.svg';
 import {
   currentCarouselIndexState,
-  showModalState,
+  showProjectsModalState,
   stopIntervalState,
 } from '@/recoil/atoms';
 import '@/styles/modal.scss';
@@ -13,12 +13,12 @@ import projectDetailJson from './data/projectContentsDetail.json';
 import skillListJson from './data/skillList.json';
 import ModalCarousel from './ModalCarousel/ModalCarousel';
 
-export default function Modal() {
+export default function ProjectsModal() {
   const skillListArray: SkillListObjectType[] = skillListJson.skills;
   const projectDetailArray = projectDetailJson.contents;
 
   const [, setStopInterval] = useRecoilState(stopIntervalState);
-  const [, setShowModal] = useRecoilState(showModalState);
+  const [, setShowProjectsModal] = useRecoilState(showProjectsModalState);
   const currentCarouselIndex = useRecoilValue(currentCarouselIndexState);
 
   const selectedProject = useMemo(() => {
@@ -39,11 +39,11 @@ export default function Modal() {
         className="modal-background-close-button"
         type="button"
         onClick={() => {
-          setShowModal((prev) => !prev);
+          setShowProjectsModal((prev) => !prev);
           setStopInterval((prev) => !prev);
         }}
       />
-      <div className="modal-container">
+      <div className="modal-container large">
         <ModalCarousel />
         <div className="modal-contents-container">
           <div>
@@ -59,7 +59,7 @@ export default function Modal() {
               className="modal-close-button"
               type="button"
               onClick={() => {
-                setShowModal((prev) => !prev);
+                setShowProjectsModal((prev) => !prev);
                 setStopInterval((prev) => !prev);
               }}
             >

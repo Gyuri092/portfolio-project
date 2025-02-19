@@ -27,3 +27,9 @@ export type ExperienceObjectType = {
   link: LinkType[];
   text: string;
 };
+
+export type SkillsKeyType = 'Front-End' | 'Database' | 'Tools';
+
+export type SkillsType = {
+  [Key in SkillsKeyType]: string;
+};
