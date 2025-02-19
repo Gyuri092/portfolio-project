@@ -1,4 +1,4 @@
-@import './mixin';
+@use 'mixin' as *;
 
 // 너비 (960px ~ 1499px) x 높이 (~ 699px)
 @include laptop-700 {

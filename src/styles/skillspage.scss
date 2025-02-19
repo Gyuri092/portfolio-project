@@ -1,9 +1,19 @@
 @use 'colors' as *;
 @use 'global';
 
+.skills-page-container {
+  @include global.page-container();
+  flex-direction: column;
+  gap: 40px;
+  .page-title {
+    height: auto;
+    border: none;
+  }
+}
+
 .skills-page-contents {
   @include global.page-contents();
-  width: 33%;
+  width: 80%;
 }
 
 .skliis-page-tab {
@@ -101,6 +111,7 @@
     4px 4px 4px $lightSilver;
   position: absolute;
   backface-visibility: hidden;
+  box-sizing: border-box;
 }
 
 .front {

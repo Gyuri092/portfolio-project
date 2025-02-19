@@ -3,3 +3,278 @@
 // @use 'responsivewidth';
 
 // @use 'responsivewidthandheight';
+
+@use 'mixin' as *;
+
+@include mobile {
+  // header
+  .header-container {
+    padding: 10px 20px !important;
+    .title {
+      font-size: 16px;
+    }
+    .icon-container {
+      width: 80px;
+      button {
+        height: 40px;
+      }
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  //mainPage
+  .mainpage {
+    .mainpage-text {
+      font-size: 20px;
+    }
+    p::after {
+      height: 24px;
+    }
+  }
+
+  //profilePage
+  .page-container {
+    .page-title {
+      width: 80px;
+      height: 80px;
+      font-size: 16px;
+    }
+    .subtitle {
+      font-size: 12px;
+    }
+    .contents {
+      font-size: 10px;
+    }
+  }
+
+  //skillsPage
+  .skills-page-container {
+    flex-direction: column;
+    gap: 20px;
+    .page-title {
+      width: 80px;
+      font-size: 16px;
+    }
+    .skills-page-contents {
+      width: 100%;
+      max-width: 100%;
+      font-size: 10px;
+    }
+    .skills-page-tab-divider {
+      padding: 2px 10px;
+      height: 30px;
+      align-items: center;
+    }
+    .skills-page-all-flip-button {
+      svg {
+        width: 14px;
+        height: 14px;
+      }
+    }
+    .skills-page-card-grid {
+      max-height: 300px;
+      grid-template-columns: repeat(1, 1fr);
+      justify-items: center;
+    }
+    .skills-page-card-container {
+      height: 220px;
+      width: 150px;
+    }
+    .skills-page-card {
+      height: 100%;
+    }
+    .back {
+      font-size: 10px;
+    }
+  }
+
+  //projectsPage
+  .projects-page-container {
+    .projects-page-title {
+      width: 100%;
+      font-size: 16px;
+    }
+    .projects-page-button-container {
+      width: 80%;
+      margin-bottom: 6px;
+      svg {
+        width: 14px;
+        height: 14px;
+      }
+    }
+    .carousel-container {
+      width: 80%;
+      height: 40%;
+      .carousel-image-title {
+        font-size: 12px;
+      }
+      .carousel-image {
+        width: 100%;
+        height: 100%;
+      }
+      .circle-index-button-container {
+        width: 40px;
+        align-items: center;
+        .circle-index-button {
+          width: 4px;
+          height: 4px;
+        }
+      }
+    }
+    .chevron-button-container {
+      padding: 0;
+      button {
+        width: auto;
+        height: auto;
+      }
+      svg {
+        width: 14px;
+        height: 14px;
+      }
+    }
+    .thumnaillist-container {
+      width: 80%;
+      gap: 10px;
+      img {
+        height: 100%;
+      }
+    }
+  }
+  //modal
+
+  .modal-background {
+    .modal-container {
+      width: 70%;
+      height: 50%;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 10px;
+      font-size: 10px;
+      gap: 20px;
+      .modal-contents-container {
+        width: 90%;
+        height: 0;
+        margin: 0;
+      }
+      .modal-carousel-container {
+        width: 90%;
+        height: 100%;
+        img {
+          scale: 0.7;
+        }
+      }
+      .modal-contents-title {
+        font-size: 12px;
+      }
+      .modal-contents-date {
+        font-size: 10px;
+      }
+      .modal-contents-summary {
+        font-size: 10px;
+      }
+      .modal-close-button {
+        svg {
+          width: 14px;
+          height: 14px;
+        }
+      }
+      .modal-github-link-container {
+        font-size: 10px;
+        margin-bottom: 10px;
+        flex-direction: column;
+        align-items: initial;
+        svg {
+          width: 10px;
+          height: 10px;
+        }
+        a {
+          font-size: 10px;
+        }
+      }
+      .modal-skills-list {
+        font-size: 10px;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  //experiencePage
+  .experience-page-container {
+    align-items: flex-start;
+    .experience-page-middle-container {
+      gap: 40px;
+      overflow-y: scroll;
+      flex-direction: column;
+    }
+
+    .experience-page-title {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    .experience-page-subtitle {
+      font-size: 12px;
+    }
+
+    .experience-page-contents {
+      gap: 10px;
+    }
+    .experience-page-text {
+      p {
+        font-size: 10px;
+      }
+    }
+
+    .experience-page-link-container {
+      height: 20px;
+      gap: 10px;
+      flex-direction: column;
+      a {
+        text-align: center;
+        font-size: 10px;
+        width: 80px;
+      }
+    }
+  }
+
+  //howiworkPage
+  .howiworkpage-container {
+    .howiworkpage-wrapper {
+      width: 90%;
+      font-size: 10px;
+    }
+    .howiworkpage-title {
+      font-size: 16px;
+    }
+
+    .howiworkpage-contents {
+      line-height: 2;
+    }
+  }
+
+  //contactPage
+  .contact-page-contents {
+    gap: 20px;
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+  .contact-page-subtitle-container {
+    p {
+      margin-left: 6px;
+    }
+  }
+  .contact-page-subtitle {
+    font-size: 14px;
+  }
+
+  .contact-page-contents {
+    font-size: 10px;
+  }
+}
